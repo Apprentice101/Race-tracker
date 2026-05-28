@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2026 Congressional Race Tracker</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#fff;color:#111;padding:0}
+button{border:1px solid #ccc;border-radius:6px;background:transparent;cursor:pointer;font-family:inherit;font-size:13px}
+button:hover{background:#f5f5f5}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid #e5e7eb}
+th{font-weight:500;color:#6b7280;font-size:11px;white-space:nowrap;cursor:pointer;user-select:none}
+th:hover{color:#111}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+.badge{border-radius:5px;padding:2px 7px;font-size:11px;font-weight:500;white-space:nowrap;display:inline-block}
+.tab-btn{padding:5px 14px;font-size:13px;border-radius:6px;margin-right:6px;margin-bottom:6px}
+.tab-active{border-color:#166534!important;background:#dcfce7!important;color:#166534!important}
+.changes-box{border:2px solid #000;border-radius:8px;padding:12px 16px;margin-bottom:20px;background:#f9fafb}
+.changes-box ul{margin:8px 0 0 16px;font-size:12px;color:#4b5563}
+.changes-box li{margin-bottom:4px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.footnotes{font-size:11px;color:#6b7280;margin-top:8px;line-height:1.6}
+.overflow-x{overflow-x:auto;border:1px solid #e5e7eb;border-radius:8px}
+.wrap{padding:1.25rem 1rem;max-width:1200px;margin:0 auto}
+h1{font-size:26px;font-weight:500;margin-bottom:4px}
+.subtitle{font-size:12px;color:#6b7280;margin-bottom:20px}
+.tabs{display:flex;flex-wrap:wrap;margin-bottom:20px}
+.note-cell{font-size:11px;color:#6b7280;min-width:260px;max-width:360px}
+.fw{font-weight:500;white-space:nowrap}
+.sm{color:#6b7280;white-space:nowrap;font-size:11px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>2026 Congressional Race Tracker</h1>
+  <p class="subtitle" id="subtitle"></p>
+  <div class="tabs" id="tabs"></div>
+  <div class="changes-box" id="changes-box"></div>
+  <div class="overflow-x"><table id="main-table"><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+  <div class="legend" id="legend"></div>
+  <p class="footnotes" id="footnotes"></p>
+</div>
+
+<script>
+const LAST_UPDATED = "May 27, 2026";
+const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
+const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
+const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
+const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely R","Safe R"];
+
+const CHANGES = {
+  "Competitive House":[
+    "Refreshed: May 27, 2026",
+    "No new Competitive House rating changes since May 25.",
+    "Inside Elections (May 21): NJ-07 and PA-10 moved from Tilt R to Toss-up — already reflected. VA-07 moved to Likely D (removed from Leaning House). WA-03 confirmed Toss-up.",
+  ],
+  "Competitive Senate":[
+    "Refreshed: May 27, 2026",
+    "TX Senate MAJOR CHANGE: Ken Paxton defeated incumbent Sen. John Cornyn in GOP runoff (May 26). Cook immediately moved TX Senate from Likely R to Lean R. Paxton's controversies (impeachment trial, ethics lapses) and fundraising weakness prompted the downgrade. Dem nominee James Talarico holds fundraising edge.",
+    "No other Senate rating changes.",
+  ],
+  "Leaning House":[
+    "Refreshed: May 27, 2026",
+    "VA-07 (Vindman, D): REMOVED — Inside Elections moved from Lean D to Likely D on May 21. No longer competitive.",
+    "TX-35 (Open, Casar D retiring): ADDED — Cook moved from Likely R to Lean R on May 27. Open seat in Austin/San Antonio area. Cook only source to rate so far.",
+  ],
+};
+
+function ratingStyle(r){
+  if(!r||r==="N/A") return "background:#f3f4f6;color:#6b7280";
+  if(r==="Safe D"||r==="Likely D") return "background:#dbeafe;color:#1e3a8a";
+  if(r==="Lean D") return "background:#bfdbfe;color:#1e40af";
+  if(r==="Tilt D") return "background:#e0f2fe;color:#075985";
+  if(r==="Toss-up") return "background:#fef9c3;color:#854d0e";
+  if(r==="Tilt R") return "background:#ffe4e6;color:#9f1239";
+  if(r==="Lean R") return "background:#fecaca;color:#991b1b";
+  if(r==="Likely R"||r==="Safe R") return "background:#fee2e2;color:#7f1d1d";
+  return "background:#f3f4f6;color:#6b7280";
+}
+
+function badge(r){ return `<span class="badge" style="${ratingStyle(r)}">${r||"N/A"}</span>`; }
+
+function consensus(r){
+  const vals=[r.cook,r.sabato,r.t270,r.ie,r.bp].filter(x=>x&&x!=="N/A");
+  const mapped=vals.map(v=>{
+    if(v==="Tilt D") return CONSENSUS_ORDER.indexOf("Toss-up")-0.5;
+    if(v==="Tilt R") return CONSENSUS_ORDER.indexOf("Toss-up")+0.5;
+    const i=CONSENSUS_ORDER.indexOf(v); return i>=0?i:null;
+  }).filter(i=>i!==null);
+  if(!mapped.length) return "N/A";
+  const avg=mapped.reduce((a,b)=>a+b,0)/mapped.length;
+  return CONSENSUS_ORDER[Math.round(avg)];
+}
+
+const HOUSE_COMPETITIVE=[
+  {district:"AZ-01",incumbent:"Open (Schweikert, R retiring)", cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Open seat after Schweikert retirement. District shifted ~4 pts R in 2024. Top Dem target."},
+  {district:"AZ-06",incumbent:"Juan Ciscomani (R)",            cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"One of the most evenly divided districts nationally. Trump won by <1 pt in 2024."},
+  {district:"CA-22",incumbent:"David Valadao (R)",             cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R", bp:"Toss-up",note:"District redrawn for 2026. Valadao has repeatedly survived tough cycles. (1)"},
+  {district:"CO-08",incumbent:"Gabe Evans (R)",                cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Freshman R flipped Dem-held seat in 2024. Suburban/exurban Denver; one of few R-held seats Harris won."},
+  {district:"FL-25",incumbent:"Debbie Wasserman Schultz (D)",  cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"N/A",   note:"FL Republican gerrymander shifted district from Harris +5 to Trump +9. Cook confirmed Toss-up May 8. Subject to court challenge. (5)"},
+  {district:"IA-01",incumbent:"Mariannette Miller-Meeks (R)",  cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Narrowest R House win in 2024 -- won by 799 votes (0.2%). Dem Bohannan running again."},
+  {district:"IA-03",incumbent:"Zach Nunn (R)",                 cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Suburban Des Moines district won by Nunn 51.8% in 2024. Inside Elections moved from Tilt R to Toss-up May 21."},
+  {district:"MI-07",incumbent:"Tom Barrett (R)",               cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Freshman R won open Lansing-area seat in 2024. Trump won narrowly."},
+  {district:"NE-02",incumbent:"Open (Bacon, R retiring)",      cook:"Toss-up",sabato:"Lean D", t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Open seat; Harris won by ~4.6 pts in 2024. Sabato moved to Lean D Apr. 21. Only NE district allocating its Electoral Vote independently. (4)"},
+  {district:"NJ-07",incumbent:"Thomas Kean Jr. (R)",           cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Suburban NJ; Kean won by ~4 pts in 2024. Inside Elections moved from Tilt R to Toss-up May 21."},
+  {district:"NY-17",incumbent:"Mike Lawler (R)",               cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R", bp:"Toss-up",note:"One of only 3 R incumbents in Harris-won districts. Lawler mulling governor run. (2)"},
+  {district:"OH-01",incumbent:"Greg Landsman (D)",             cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Cook upgraded from Lean D to Toss-up. Cincinnati-area district Trump carried by ~3 pts in 2024."},
+  {district:"OH-09",incumbent:"Marcy Kaptur (D)",              cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Longest-serving woman in Congress. Trump won district by 11 pts. Top GOP pickup opportunity."},
+  {district:"PA-07",incumbent:"Ryan Mackenzie (R)",            cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Lehigh Valley true swing seat. Mackenzie flipped from Dem Wild by ~4,000 votes in 2024."},
+  {district:"PA-08",incumbent:"Rob Bresnahan (R)",             cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Moved Lean R to Toss-up Apr. 7. Bresnahan faces scrutiny over 600+ stock trades. (3)"},
+  {district:"PA-10",incumbent:"Scott Perry (R)",               cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Former Freedom Caucus chair won by just 1 pt in 2024. Inside Elections moved from Tilt R to Toss-up May 21."},
+  {district:"TX-34",incumbent:"Vicente Gonzalez (D)",          cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"South Texas majority-Latino district redrawn by R legislature. Trump won by 10 pts in 2024."},
+  {district:"VA-02",incumbent:"Jen Kiggans (R)",               cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Reverted to Toss-up May 8 after VA Supreme Court struck down Democratic gerrymander."},
+  {district:"WA-03",incumbent:"Marie Perez (D)",               cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Perez narrowly flipped this SW Washington seat in 2024. Trump won district."},
+  {district:"WI-03",incumbent:"Derrick Van Orden (R)",         cook:"Toss-up",sabato:"Tilt R", t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Western WI district. Van Orden won by ~4 pts in 2024."},
+];
+
+const SENATE_COMPETITIVE=[
+  {district:"GA",          incumbent:"Jon Ossoff (D)",          cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"ME",          incumbent:"Susan Collins (R)",        cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R", bp:"Toss-up"},
+  {district:"MI",          incumbent:"Open (D retiring)",        cook:"Toss-up",sabato:"Tilt D", t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
+  {district:"NC",          incumbent:"Open (R retiring)",        cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"NH",          incumbent:"Open (D retiring)",        cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"OH (special)",incumbent:"Jon Husted (R)",           cook:"Toss-up",sabato:"Tilt R", t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
+  {district:"AK",          incumbent:"Dan Sullivan (R)",         cook:"Lean R", sabato:"Likely R",t270:"Lean R", ie:"Lean R", bp:"Lean R"},
+  {district:"IA",          incumbent:"Open (R retiring)",        cook:"Lean R", sabato:"Lean R", t270:"Lean R", ie:"Lean R", bp:"Lean R"},
+  {district:"TX",          incumbent:"Ken Paxton (R nominee)",   cook:"Lean R", sabato:"Lean R", t270:"Lean R", ie:"Lean R", bp:"Lean R"},
+];
+
+const HOUSE_LEANING=[
+  {district:"CA-13",incumbent:"Adam Gray (D)",                   cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"CA-45",incumbent:"Derek Tran (D)",                  cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"CA-48",incumbent:"Open (Issa, R retiring)",         cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"FL-14",incumbent:"Kathy Castor (D)",                cook:"Lean R", sabato:"Lean R", t270:"Lean R", ie:"Lean R", bp:"N/A"},
+  {district:"FL-22",incumbent:"Lois Frankel (D)",                cook:"Lean R", sabato:"Lean R", t270:"Lean R", ie:"Lean R", bp:"N/A"},
+  {district:"MI-04",incumbent:"Open (R, Leans R)",               cook:"N/A",    sabato:"Lean R", t270:"N/A",    ie:"N/A",    bp:"N/A"},
+  {district:"MI-10",incumbent:"Open (James, R running for gov)", cook:"Lean R", sabato:"Lean R", t270:"Lean R", ie:"Lean R", bp:"Lean R"},
+  {district:"NM-02",incumbent:"Gabe Vasquez (D)",                cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"NV-03",incumbent:"Susie Lee (D)",                   cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"NC-01",incumbent:"Don Davis (D)",                   cook:"Lean R", sabato:"Lean R", t270:"Lean R", ie:"Lean R", bp:"Lean R"},
+  {district:"NC-11",incumbent:"Chuck Edwards (R)",               cook:"N/A",    sabato:"Lean R", t270:"N/A",    ie:"N/A",    bp:"N/A"},
+  {district:"NY-03",incumbent:"Tom Suozzi (D)",                  cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"NY-04",incumbent:"Laura Gillen (D)",                cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"NY-19",incumbent:"Josh Riley (D)",                  cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"OH-13",incumbent:"Emilia Sykes (D)",                cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"PA-01",incumbent:"Brian Fitzpatrick (R)",           cook:"Likely R",sabato:"Likely R",t270:"Likely R",ie:"Lean R",bp:"Likely R"},
+  {district:"TX-28",incumbent:"Henry Cuellar (D)",               cook:"Lean D", sabato:"Lean D", t270:"Lean D", ie:"Lean D", bp:"Lean D"},
+  {district:"TX-35",incumbent:"Open (Casar, D retiring)",        cook:"Lean R", sabato:"N/A",    t270:"N/A",    ie:"N/A",    bp:"N/A"},
+  {district:"VA-01",incumbent:"Rob Wittman (R)",                 cook:"Lean R", sabato:"Lean R", t270:"Lean R", ie:"Lean R", bp:"Lean R"},
+  {district:"AK-AL",incumbent:"Nick Begich (R)",                 cook:"Likely R",sabato:"Lean R",t270:"Lean R", ie:"Lean R", bp:"Lean R"},
+  {district:"ME-02",incumbent:"Open (Golden, D retiring)",       cook:"Likely R",sabato:"Likely R",t270:"Likely R",ie:"Lean R",bp:"Likely R"},
+  {district:"WI-03",incumbent:"Derrick Van Orden (R)",           cook:"Toss-up",sabato:"Tilt R", t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
+];
+
+const DATA={
+  "Competitive House":HOUSE_COMPETITIVE,
+  "Competitive Senate":SENATE_COMPETITIVE,
+  "Leaning House":HOUSE_LEANING,
+};
+
+const PANEL_LABELS={
+  "Competitive House":"Competitive House races",
+  "Competitive Senate":"Competitive Senate races",
+  "Leaning House":"Leaning House seats",
+};
+
+let state={
+  active:"Competitive House",
+  sort:{col:"district",dir:1},
+  cleared:{"Competitive House":false,"Competitive Senate":false,"Leaning House":false},
+};
+
+function sortRows(rows){
+  const {col,dir}=state.sort;
+  const ck=SOURCE_KEYS[col]||col;
+  return [...rows].sort((a,b)=>{
+    if(ck==="district") return dir*a.district.localeCompare(b.district);
+    if(ck==="incumbent") return dir*a.incumbent.localeCompare(b.incumbent);
+    const ord=ck==="consensus"?CONSENSUS_ORDER:RATING_ORDER;
+    const va=ord.indexOf(a[ck]||"N/A"),vb=ord.indexOf(b[ck]||"N/A");
+    return dir*((va<0?99:va)-(vb<0?99:vb));
+  });
+}
+
+function render(){
+  const {active,sort,cleared}=state;
+
+  document.getElementById("subtitle").textContent=
+    "Data as of "+LAST_UPDATED+" \u00b7 Sources: Cook \u00b7 Sabato \u00b7 270toWin \u00b7 Inside Elections \u00b7 Ballotpedia";
+
+  const tabs=document.getElementById("tabs");
+  tabs.innerHTML="";
+  Object.keys(PANEL_LABELS).forEach(p=>{
+    const btn=document.createElement("button");
+    btn.className="tab-btn"+(active===p?" tab-active":"");
+    btn.innerHTML=PANEL_LABELS[p]+" <span style='font-size:11px'>("+DATA[p].length+")</span>";
+    btn.onclick=()=>{state.active=p;render();};
+    tabs.appendChild(btn);
+  });
+
+  const box=document.getElementById("changes-box");
+  box.innerHTML="";
+  const hdr=document.createElement("div");
+  hdr.style.cssText="display:flex;justify-content:space-between;align-items:center";
+  const title=document.createElement("span");
+  title.style.cssText="font-size:13px;font-weight:500";
+  title.textContent="Recent changes";
+  hdr.appendChild(title);
+  if(!cleared[active]){
+    const clr=document.createElement("button");
+    clr.style.cssText="font-size:11px;padding:3px 10px";
+    clr.textContent="Clear";
+    clr.onclick=()=>{state.cleared[active]=true;render();};
+    hdr.appendChild(clr);
+  }
+  box.appendChild(hdr);
+  if(cleared[active]){
+    const p=document.createElement("p");
+    p.style.cssText="font-size:12px;color:#6b7280;margin-top:6px";
+    p.textContent="Cleared. Changes will appear here after next refresh.";
+    box.appendChild(p);
+  } else {
+    const ul=document.createElement("ul");
+    CHANGES[active].forEach(c=>{const li=document.createElement("li");li.textContent=c;ul.appendChild(li);});
+    box.appendChild(ul);
+  }
+
+  const isComp=active==="Competitive House";
+  const cols=["district","incumbent","consensus",...SOURCES,...(isComp?["notes"]:[])];
+  const thead=document.getElementById("thead");
+  thead.innerHTML="";
+  const tr=document.createElement("tr");
+  cols.forEach(col=>{
+    const th=document.createElement("th");
+    const labels={district:"District/State",incumbent:"Incumbent",consensus:"Consensus",notes:"Notes (Cook unless noted)"};
+    th.innerHTML=(labels[col]||col)+(sort.col===col?(sort.dir===1?" \u2191":" \u2193"):"");
+    th.style.color=sort.col===col?"#111":"#6b7280";
+    th.onclick=()=>{
+      state.sort=sort.col===col?{col,dir:-sort.dir}:{col,dir:1};
+      render();
+    };
+    tr.appendChild(th);
+  });
+  thead.appendChild(tr);
+
+  const tbody=document.getElementById("tbody");
+  tbody.innerHTML="";
+  const rows=sortRows(DATA[active].map(r=>({...r,consensus:consensus(r)})));
+  rows.forEach(r=>{
+    const tr=document.createElement("tr");
+    const cells=[
+      `<td class="fw">${r.district}</td>`,
+      `<td class="sm">${r.incumbent}</td>`,
+      `<td>${badge(r.consensus)}</td>`,
+      ...SOURCES.map(s=>`<td>${badge(r[SOURCE_KEYS[s]])}</td>`),
+      ...(isComp?[`<td class="note-cell">${r.note||"\u2014"}</td>`]:[]),
+    ];
+    tr.innerHTML=cells.join("");
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById("legend").innerHTML=[
+    ["Lean D","#bfdbfe","#1e40af"],
+    ["Tilt D = slight D edge","#e0f2fe","#075985"],
+    ["Toss-up","#fef9c3","#854d0e"],
+    ["Tilt R = slight R edge","#ffe4e6","#9f1239"],
+    ["Lean R","#fecaca","#991b1b"],
+    ["Likely R","#fee2e2","#7f1d1d"],
+  ].map(([l,bg,c])=>`<span class="badge" style="background:${bg};color:${c}">${l}</span>`).join("");
+
+  const sources=[
+    ["Cook Political Report","https://www.cookpolitical.com/ratings/house-race-ratings"],
+    ["Sabato's Crystal Ball","https://centerforpolitics.org/crystalball/2026-house/"],
+    ["270toWin","https://www.270towin.com/2026-house-election-predictions/"],
+    ["Inside Elections","https://www.insideelections.com/ratings/house"],
+    ["Ballotpedia","https://ballotpedia.org/United_States_House_of_Representatives_elections,_2026"],
+  ].map(([n,u],i,a)=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${n}</a>${i<a.length-1?" \u00b7":""}`).join(" ");
+
+  document.getElementById("footnotes").innerHTML=
+    "Click any column header to sort. Consensus smooths Tilt ratings into nearest standard tier."
+    +(isComp?" (1) CA-22: IE re redistricting. (2) NY-17: governor speculation. (3) PA-08: stock trade reporting. (4) NE-02: Sabato Lean D Apr. 21. (5) FL-25: FL Republican gerrymander; still being litigated.":"")
+    +"<br>Sources: "+sources;
+}
+
+render();
+</script>
+</body>
+</html>
