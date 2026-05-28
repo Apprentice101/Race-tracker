@@ -55,17 +55,18 @@ const CHANGES = {
   "Competitive House":[
     "Refreshed: May 27, 2026",
     "No new Competitive House rating changes since May 25.",
-    "Inside Elections (May 21): NJ-07 and PA-10 moved from Tilt R to Toss-up — already reflected. VA-07 moved to Likely D (removed from Leaning House). WA-03 confirmed Toss-up.",
+    "Inside Elections (May 21): NJ-07 and PA-10 moved Tilt R to Toss-up — already reflected in dashboard. VA-07 moved to Likely D (removed from Leaning House). WA-03 confirmed Toss-up.",
+    "PA-08 note updated: Inside Elections moved from Tilt R to Toss-up May 21.",
   ],
   "Competitive Senate":[
     "Refreshed: May 27, 2026",
-    "TX Senate MAJOR CHANGE: Ken Paxton defeated incumbent Sen. John Cornyn in GOP runoff (May 26). Cook immediately moved TX Senate from Likely R to Lean R. Paxton's controversies (impeachment trial, ethics lapses) and fundraising weakness prompted the downgrade. Dem nominee James Talarico holds fundraising edge.",
+    "TX Senate — MAJOR CHANGE (May 26): Ken Paxton defeated incumbent Sen. John Cornyn in GOP runoff. Cook immediately moved TX Senate Likely R to Lean R. Paxton's controversies (impeachment trial, ethics lapses) and fundraising weakness prompted downgrade. Dem nominee James Talarico holds fundraising edge. Incumbent updated to Ken Paxton (R nominee).",
     "No other Senate rating changes.",
   ],
   "Leaning House":[
     "Refreshed: May 27, 2026",
-    "VA-07 (Vindman, D): REMOVED — Inside Elections moved from Lean D to Likely D on May 21. No longer competitive.",
-    "TX-35 (Open, Casar D retiring): ADDED — Cook moved from Likely R to Lean R on May 27. Open seat in Austin/San Antonio area. Cook only source to rate so far.",
+    "VA-07 (Vindman, D): REMOVED — Inside Elections moved Lean D to Likely D on May 21. No longer competitive.",
+    "TX-35 (Open/Casar, D retiring): ADDED — Cook moved Likely R to Lean R on May 27. Open seat in Austin/San Antonio area. Cook only source rating this race so far.",
   ],
 };
 
