@@ -13,6 +13,7 @@ table{border-collapse:collapse;width:100%;font-size:12px}
 th,td{padding:7px 10px;text-align:left;border-bottom:1px solid #e5e7eb}
 th{font-weight:500;color:#6b7280;font-size:11px;white-space:nowrap;cursor:pointer;user-select:none}
 th:hover{color:#111}
+th.asc,th.desc{color:#111}
 th.asc::after{content:" ↑"}
 th.desc::after{content:" ↓"}
 a{color:#2563eb;text-decoration:none}
@@ -67,50 +68,11 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
     <div class="pr-top">
       <div class="pr-left">
         <span class="pr-title">Results from last primaries</span>
-        <span class="pr-date">June 9, 2026</span>
+        <span class="pr-date" id="pr-date"></span>
       </div>
       <button class="pr-clear" id="pr-clear-btn" onclick="clearPrimary()">Clear</button>
     </div>
-    <div id="pr-body">
-      <div class="wc-grid">
-
-        <div class="wc-item" onclick="tog('mesen')">
-          <div class="wc-item-hdr"><span class="ctag tag-primary">Primary set</span><span class="wc-dist">ME Senate</span></div>
-          <div class="wc-sum">Platner (D) vs. Collins (R)</div>
-          <div class="wc-hint" id="mesen-h">&#9658; tap for details</div>
-          <div class="wc-detail" id="mesen">Graham Platner (D), a veteran and oyster farmer, won the Dem primary with ~78%, defeating Gov. Janet Mills (who suspended her campaign in April but stayed on the ballot). He faces five-term Sen. Susan Collins in one of the cycle&rsquo;s marquee races, with controversies over his past conduct still looming. Ratings unchanged: Toss-up (IE: Tilt R).</div>
-        </div>
-
-        <div class="wc-item" onclick="tog('me02')">
-          <div class="wc-item-hdr"><span class="ctag tag-primary">Primary set</span><span class="wc-dist">ME-02</span></div>
-          <div class="wc-sum">LePage (R) advances; Dem race in RCV</div>
-          <div class="wc-hint" id="me02-h">&#9658; tap for details</div>
-          <div class="wc-detail" id="me02">Former Gov. Paul LePage won the GOP nomination for the open seat (Golden, D, retiring). The Dem primary heads to ranked-choice tabulation &mdash; no candidate topped 50%; state Sen. Joe Baldacci is the establishment pick. A top GOP pickup target. Ratings unchanged: Likely R (IE: Lean R).</div>
-        </div>
-
-        <div class="wc-item" onclick="tog('nv03')">
-          <div class="wc-item-hdr"><span class="ctag tag-primary">Primary set</span><span class="wc-dist">NV-03</span></div>
-          <div class="wc-sum">GOP nominee: Marty O'Donnell</div>
-          <div class="wc-hint" id="nv03-h">&#9658; tap for details</div>
-          <div class="wc-detail" id="nv03">Marty O&rsquo;Donnell (R), an audio producer backed by Trump and Gov. Lombardo, won a 4-way GOP primary with ~44%. Incumbent Susie Lee (D) was renominated with ~73%. Ratings unchanged: Lean D.</div>
-        </div>
-
-        <div class="wc-item" onclick="tog('ia02')">
-          <div class="wc-item-hdr"><span class="ctag tag-rating">Rating change</span><span class="wc-dist">IA-02</span></div>
-          <div class="wc-sum">Sabato: Likely R &rarr; <span style="background:#fecaca;color:#991b1b;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean R</span></div>
-          <div class="wc-hint" id="ia02-h">&#9658; tap for details</div>
-          <div class="wc-detail" id="ia02">Open NE Iowa seat vacated by Ashley Hinson (R, running for Senate). June 2 primaries set the general: state Rep. Lindsay James (D, Presbyterian minister) vs. former state Rep. Joe Mitchell (R, Trump-endorsed). Sabato moved Likely R &rarr; Lean R on June 3; ADDED to the Leaning House tab.</div>
-        </div>
-
-        <div class="wc-item" onclick="tog('al02')">
-          <div class="wc-item-hdr"><span class="ctag tag-note">Not tracked</span><span class="wc-dist">AL-02</span></div>
-          <div class="wc-sum">SCOTUS allows GOP map; seat shifts Solid R</div>
-          <div class="wc-hint" id="al02-h">&#9658; tap for details</div>
-          <div class="wc-detail" id="al02">The Supreme Court (June 2, over three dissents) let Alabama use a GOP-drawn map eliminating the second majority-Black district held by Rep. Shomari Figures (D). Cook moved AL-02 to Solid R on June 9; LA-06 and MO-05 also moved Solid R after mid-decade redistricting. Not tracked here &mdash; rated Likely/Solid R.</div>
-        </div>
-
-      </div>
-    </div>
+    <div id="pr-body"></div>
   </div>
 
   <div class="tabs" id="tabs"></div>
@@ -145,6 +107,7 @@ const CHANGES = {
     "IA-02 ADDED: Sabato moved Likely R to Lean R on June 3. Open seat (Hinson, R, running for Senate). General: Lindsay James (D) vs. Joe Mitchell (R, Trump-endorsed). Cook/IE/Ballotpedia remain Likely R.",
     "ME-02 (Open/Golden retiring): Former Gov. Paul LePage won the GOP primary. Dem primary heads to ranked-choice tabulation \u2014 no candidate topped 50%. Ratings unchanged.",
     "NV-03 (Lee, D): Marty O'Donnell (R, Trump-backed audio producer) won GOP primary with ~44%; Lee renominated with ~73%. Ratings unchanged: Lean D.",
+    "Housekeeping: WI-03 removed from this tab \u2014 it is rated Toss-up and is tracked on the Competitive House tab (it was listed in both).",
   ],
 };
 
@@ -172,7 +135,10 @@ function consensus(r){
     const i=CONSENSUS_ORDER.indexOf(v); return i>=0?i:null;
   }).filter(i=>i!==null);
   if(!mapped.length) return "N/A";
-  return CONSENSUS_ORDER[Math.round(mapped.reduce((a,b)=>a+b,0)/mapped.length)];
+  const avg=mapped.reduce((a,b)=>a+b,0)/mapped.length;
+  // Exact half-tier averages smooth toward Toss-up (index 3) so Tilt D and Tilt R are treated symmetrically
+  const idx=(avg%1===0.5)?(avg>3?Math.floor(avg):Math.ceil(avg)):Math.round(avg);
+  return CONSENSUS_ORDER[idx];
 }
 
 function tog(id){
@@ -185,6 +151,44 @@ function tog(id){
 function clearPrimary(){
   document.getElementById("pr-body").innerHTML='<p class="pr-cleared">Cleared. Results will appear here after the next primary refresh.</p>';
   document.getElementById("pr-clear-btn").style.display="none";
+}
+
+// ---- Primary results panel data ----
+// To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
+const PRIMARY_RESULTS = {
+  date: "June 9, 2026",
+  items: [
+    {id:"mesen", tag:"primary", dist:"ME Senate",
+     sum:"Platner (D) vs. Collins (R)",
+     detail:"Graham Platner (D), a veteran and oyster farmer, won the Dem primary with ~78%, defeating Gov. Janet Mills (who suspended her campaign in April but stayed on the ballot). He faces five-term Sen. Susan Collins in one of the cycle&rsquo;s marquee races, with controversies over his past conduct still looming. Ratings unchanged: Toss-up (IE: Tilt R)."},
+    {id:"me02", tag:"primary", dist:"ME-02",
+     sum:"LePage (R) advances; Dem race in RCV",
+     detail:"Former Gov. Paul LePage won the GOP nomination for the open seat (Golden, D, retiring). The Dem primary heads to ranked-choice tabulation &mdash; no candidate topped 50%; state Sen. Joe Baldacci is the establishment pick. A top GOP pickup target. Ratings unchanged: Likely R (IE: Lean R)."},
+    {id:"nv03", tag:"primary", dist:"NV-03",
+     sum:"GOP nominee: Marty O'Donnell",
+     detail:"Marty O&rsquo;Donnell (R), an audio producer backed by Trump and Gov. Lombardo, won a 4-way GOP primary with ~44%. Incumbent Susie Lee (D) was renominated with ~73%. Ratings unchanged: Lean D."},
+    {id:"ia02", tag:"rating", dist:"IA-02",
+     sum:'Sabato: Likely R &rarr; <span style="background:#fecaca;color:#991b1b;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean R</span>',
+     detail:"Open NE Iowa seat vacated by Ashley Hinson (R, running for Senate). June 2 primaries set the general: state Rep. Lindsay James (D, Presbyterian minister) vs. former state Rep. Joe Mitchell (R, Trump-endorsed). Sabato moved Likely R &rarr; Lean R on June 3; ADDED to the Leaning House tab."},
+    {id:"al02", tag:"note", dist:"AL-02",
+     sum:"SCOTUS allows GOP map; seat shifts Solid R",
+     detail:"The Supreme Court (June 2, over three dissents) let Alabama use a GOP-drawn map eliminating the second majority-Black district held by Rep. Shomari Figures (D). Cook moved AL-02 to Solid R on June 9; LA-06 and MO-05 also moved Solid R after mid-decade redistricting. Not tracked here &mdash; rated Likely/Solid R."},
+  ],
+};
+
+const TAG_LABELS={rating:["tag-rating","Rating change"],primary:["tag-primary","Primary set"],note:["tag-note","Not tracked"]};
+
+function renderPrimary(){
+  document.getElementById("pr-date").textContent=PRIMARY_RESULTS.date;
+  document.getElementById("pr-body").innerHTML='<div class="wc-grid">'+PRIMARY_RESULTS.items.map(it=>{
+    const [cls,label]=TAG_LABELS[it.tag];
+    return `<div class="wc-item" onclick="tog('${it.id}')">
+      <div class="wc-item-hdr"><span class="ctag ${cls}">${label}</span><span class="wc-dist">${it.dist}</span></div>
+      <div class="wc-sum">${it.sum}</div>
+      <div class="wc-hint" id="${it.id}-h">&#9658; tap for details</div>
+      <div class="wc-detail" id="${it.id}">${it.detail}</div>
+    </div>`;
+  }).join("")+'</div>';
 }
 
 const HOUSE_COMPETITIVE=[
@@ -245,7 +249,6 @@ const HOUSE_LEANING=[
   {district:"TX-28",incumbent:"Henry Cuellar (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"TX-35",incumbent:"Open (Casar, D retiring)",cook:"Lean R",sabato:"N/A",t270:"N/A",ie:"N/A",bp:"N/A"},
   {district:"VA-01",incumbent:"Rob Wittman (R)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
-  {district:"WI-03",incumbent:"Derrick Van Orden (R)",cook:"Toss-up",sabato:"Tilt R",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
 ];
 
 const DATA={
@@ -274,7 +277,10 @@ function sortRows(rows){
     if(ck==="incumbent") return dir*a.incumbent.localeCompare(b.incumbent);
     const ord=ck==="consensus"?CONSENSUS_ORDER:RATING_ORDER;
     const va=ord.indexOf(a[ck]||"N/A"),vb=ord.indexOf(b[ck]||"N/A");
-    return dir*((va<0?99:va)-(vb<0?99:vb));
+    if(va<0&&vb<0) return 0;          // both N/A
+    if(va<0) return 1;                // N/A always sorts last,
+    if(vb<0) return -1;               // regardless of sort direction
+    return dir*(va-vb);
   });
 }
 
@@ -339,7 +345,6 @@ function render(){
     const labels={district:"District/State",incumbent:"Incumbent / Nominees",consensus:"Consensus",notes:"Notes (Cook unless noted)"};
     th.innerHTML=(labels[col]||col);
     if(sort.col===col) th.className=sort.dir===1?"asc":"desc";
-    th.style.color=sort.col===col?"#111":"#6b7280";
     th.onclick=()=>{state.sort=sort.col===col?{col,dir:-sort.dir}:{col,dir:1};render();};
     tr.appendChild(th);
   });
@@ -384,6 +389,7 @@ function render(){
     +"<br>Sources: "+srcs;
 }
 
+renderPrimary();
 render();
 </script>
 </body>
