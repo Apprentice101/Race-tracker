@@ -92,7 +92,7 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 const CHANGES = {
   "Competitive House":[
     "Refreshed: June 30, 2026",
-    "NJ-07 (Kean, R) MAJOR MOVEMENT: Kean has missed 99 House votes since March 5 and has not been seen publicly in nearly 3 months; cause still undisclosed. Navy veteran Rebecca Bennett won a 4-way Dem primary June 2 and is hammering his absence. IE moved Toss-up to Tilt D on June 11; betting markets (Kalshi) now put Dem chances near 75-78%, up from ~46% in March. Cook still Toss-up.",
+    "NJ-07 (Kean, R) UPDATE June 30: Kean returned to the House floor today, disclosing he had been hospitalized for depression. He missed 140+ votes since March 5. 'Asking for help is not a weakness. It is a strength,' he said in his floor speech. Bennett (D) remains in a strong position; IE holds at Tilt D, Kalshi ~75-78% Dem. Race dynamics may shift now that the reason for absence is known.",
     "OH-01 (Landsman, D): IE joined Cook in moving Toss-up to Tilt D on June 11. 270toWin and Ballotpedia remain Toss-up; stays on this tab on consensus.",
     "IA-03 (Nunn, R): IE moved Lean R to Tilt R on June 11, tightening the race slightly in the incumbent's favor.",
     "NY-17 (Lawler, R): Army veteran and former NSC/CISA official Cait Conley won the June 23 Dem primary outright over 4 rivals (~49%); faces Lawler in November.",
@@ -166,6 +166,9 @@ function clearPrimary(){
 const PRIMARY_RESULTS = {
   date: "Week of June 24-30, 2026",
   items: [
+    {id:"nj07return", tag:"primary", dist:"NJ-07",
+     sum:"Kean returns, discloses depression hospitalization",
+     detail:"Rep. Tom Kean Jr. (R) returned to the House floor June 30, revealing he had been hospitalized after a depression diagnosis — the reason for his 140+ missed votes since March 5. 'Asking for help is not a weakness. It is a strength,' he said. Speaker Johnson said he knew the diagnosis for weeks but kept it confidential at Kean's request. Dem nominee Rebecca Bennett has spent the campaign hammering his absence; IE rates the seat Tilt D. Whether Kean's return and candid disclosure help or hurt him with voters remains to be seen."},
     {id:"fl09", tag:"rating", dist:"FL-09",
      sum:'Cook &amp; IE: Solid R &rarr; <span style="background:#fca5a5;color:#7f1d1d;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Likely R</span>',
      detail:"Cook moved FL-09 (Darren Soto, D) from Solid R to Likely R on June 29, citing Soto running for re-election against long odds. The DeSantis gerrymander dramatically reconfigured the seat, removing it from Orlando and stretching 150 miles south into deeply red rural counties — shifting the Cook PVI from D+10 to roughly R+15. IE also rates it Likely R. Soto outran Harris by 9 pts in 2024, which Cook acknowledged, but called it an uphill battle. ADDED to Leaning House tab."},
@@ -218,7 +221,7 @@ const HOUSE_COMPETITIVE=[
   {district:"IA-03",incumbent:"Zach Nunn (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up",note:"Suburban Des Moines district won by Nunn 51.8% in 2024. IE moved from Toss-up to Tilt R on June 11."},
   {district:"MI-07",incumbent:"Tom Barrett (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Freshman R won open Lansing-area seat in 2024. Trump won narrowly."},
   {district:"NE-02",incumbent:"Open (Bacon, R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Open seat; Harris won by ~4.6 pts in 2024. Cook joined Sabato at Lean D in June; IE and 270toWin still Toss-up. Only NE district allocating its Electoral Vote independently. (4)"},
-  {district:"NJ-07",incumbent:"Bennett (D) vs. Kean (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Bennett (D, Navy veteran) defeated 3 rivals June 2; faces Kean (R) in November. Kean has missed 99 House votes since March 5 (undisclosed health issue) and hasn't appeared publicly in nearly 3 months. IE moved to Tilt D June 11; Kalshi markets put Dem odds near 75-78%."},
+  {district:"NJ-07",incumbent:"Bennett (D) vs. Kean (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Kean returned to Congress June 30, disclosing he had been hospitalized for depression — missed 140+ votes since March 5. 'Asking for help is not a weakness. It is a strength.' Bennett (D, Navy veteran) defeated 3 rivals June 2; IE moved to Tilt D June 11; Kalshi markets ~75-78% Dem."},
   {district:"NY-17",incumbent:"Conley (D) vs. Lawler (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up",note:"Army veteran/NSC alum Cait Conley won the June 23 Dem primary outright (~49% in a 5-way field) and faces Lawler in November. One of only 3 R incumbents in Harris-won districts. Lawler mulling governor run. (2)"},
   {district:"OH-01",incumbent:"Greg Landsman (D)",cook:"Lean D",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Cook and IE both now rate Lean D/Tilt D; Sabato and 270toWin hold at Toss-up. Cincinnati-area district Trump carried by ~3 pts in 2024."},
   {district:"OH-09",incumbent:"Marcy Kaptur (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Longest-serving woman in Congress. Trump won district by 11 pts. Top GOP pickup opportunity."},
