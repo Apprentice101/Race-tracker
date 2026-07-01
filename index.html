@@ -83,7 +83,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "June 24, 2026";
+const LAST_UPDATED = "June 30, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -91,26 +91,31 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: June 24, 2026",
+    "Refreshed: June 30, 2026",
     "NJ-07 (Kean, R) MAJOR MOVEMENT: Kean has missed 99 House votes since March 5 and has not been seen publicly in nearly 3 months; cause still undisclosed. Navy veteran Rebecca Bennett won a 4-way Dem primary June 2 and is hammering his absence. IE moved Toss-up to Tilt D on June 11; betting markets (Kalshi) now put Dem chances near 75-78%, up from ~46% in March. Cook still Toss-up.",
     "OH-01 (Landsman, D): IE joined Cook in moving Toss-up to Tilt D on June 11. 270toWin and Ballotpedia remain Toss-up; stays on this tab on consensus.",
     "IA-03 (Nunn, R): IE moved Lean R to Tilt R on June 11, tightening the race slightly in the incumbent's favor.",
     "NY-17 (Lawler, R): Army veteran and former NSC/CISA official Cait Conley won the June 23 Dem primary outright over 4 rivals (~49%); faces Lawler in November.",
-    "No other Competitive House rating changes since June 12.",
+    "No other Competitive House rating changes since June 24.",
   ],
   "Competitive Senate":[
-    "Refreshed: June 24, 2026",
+    "Refreshed: June 30, 2026",
+    "GA Senate (IE June 25): IE moved from Lean D to Toss-up; Cook/Sabato/270toWin/Ballotpedia still Lean D. Collins (R) vs. Ossoff (D).",
+    "NC Senate (IE June 25): IE moved from Lean D to Toss-up; all other raters still Lean D. Open seat (Tillis, R retiring).",
+    "NH Senate (IE June 25): IE moved from Lean D to Tilt D. All other raters still Lean D. Open seat (Shaheen, D retiring).",
+    "TX Senate POLL: NYT/Siena (June 19-27, n=656) finds Paxton and Talarico tied 47-47. Talarico leads 61%-29% among Hispanics and 58%-31% among independents; only 38% say Paxton has 'good character.' No rater has moved yet — Cook/Sabato/270/Ballotpedia hold Lean R, IE at Likely R — but watch this space.",
     "AK Senate: Sabato moved Lean R to Toss-up on June 11, citing the close race between Sen. Dan Sullivan (R) and former Rep. Mary Peltola (D). Cook still rates it Lean R.",
     "OH Senate (special): Sabato moved Lean R to Toss-up on June 11 as well, as appointed Sen. Jon Husted (R) faces a competitive bid from former Sen. Sherrod Brown (D). Cook still rates it Toss-up (no change there).",
-    "GA Senate SET: Rep. Mike Collins (R) defeated Derek Dooley 55-45 in the June 16 runoff (Trump endorsed Collins late; Dooley had Gov. Kemp's backing). Collins now faces Sen. Jon Ossoff (D) in November.",
+    "GA Senate SET: Rep. Mike Collins (R) defeated Derek Dooley 55-45 in the June 16 runoff. Collins now faces Sen. Jon Ossoff (D) in November.",
   ],
   "Leaning House":[
-    "Refreshed: June 24, 2026",
+    "Refreshed: June 30, 2026",
+    "FL-09 (Soto, D) ADDED: Cook moved from Solid R to Likely R on June 29. Soto is running for re-election in his dramatically redrawn district — the DeSantis gerrymander stretched it 150 miles south from Orlando into deeply red rural counties, shifting the baseline from D+10 to R+15. IE rates it Likely R as well. Other raters TBD.",
     "Cook's June 18 wave (cited a worsening political environment for the GOP): MI-04 (Huizenga, R), NC-11 (Edwards, R), and IA-02 (open, Hinson running for Senate) all moved Likely R to Lean R.",
     "NC-11 ALSO: IE began rating the race (Lean R) for the first time. Edwards is now the subject of a House Ethics Committee probe into alleged inappropriate conduct with a staffer; Dem challenger Jamie Ager has a 2-to-1 cash-on-hand edge.",
     "MI-08 (McDonald Rivet, D): IE moved Lean D to Likely D on June 11; other raters hold at Lean D, so it stays on this tab.",
     "NY-03 and NY-19 nominees set in June 23 primaries: Suozzi (D) faces Trump/Vance-backed Michael LiPetri (R) in NY-03; Riley (D) faces Trump-backed state Sen. Peter Oberacker (R) in NY-19. No rating changes.",
-    "No other Leaning House rating changes since June 12.",
+    "No other Leaning House rating changes since June 24.",
   ],
 };
 
@@ -159,29 +164,32 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of June 16-23, 2026",
+  date: "Week of June 24-30, 2026",
   items: [
+    {id:"fl09", tag:"rating", dist:"FL-09",
+     sum:'Cook &amp; IE: Solid R &rarr; <span style="background:#fca5a5;color:#7f1d1d;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Likely R</span>',
+     detail:"Cook moved FL-09 (Darren Soto, D) from Solid R to Likely R on June 29, citing Soto running for re-election against long odds. The DeSantis gerrymander dramatically reconfigured the seat, removing it from Orlando and stretching 150 miles south into deeply red rural counties — shifting the Cook PVI from D+10 to roughly R+15. IE also rates it Likely R. Soto outran Harris by 9 pts in 2024, which Cook acknowledged, but called it an uphill battle. ADDED to Leaning House tab."},
+    {id:"txpoll", tag:"note", dist:"TX Senate",
+     sum:"NYT/Siena: Paxton and Talarico tied 47-47 among likely voters",
+     detail:"A New York Times/Siena poll (June 19-27, n=656 likely voters, MOE ±4.5 pts) finds Paxton and Talarico deadlocked at 47%. Paxton shows serious character weaknesses: only 38% say he has 'good character' vs. 56% for Talarico; 50% call Paxton 'too extreme' vs. 43% for Talarico. Talarico leads 61%-29% among Hispanic voters and wins independents 58%-31%. A UT/Texas Politics Project poll (same week) showed Paxton up just 43%-42%. No rater has moved TX yet — Cook, Sabato, 270toWin, Ballotpedia hold at Lean R; IE at Likely R — but this is the most credible polling signal yet that TX could be a true Toss-up."},
+    {id:"iesenatetune", tag:"rating", dist:"Senate: GA / NC / NH / TX",
+     sum:"IE June 25 Senate reshuffle — GA, NC shift to Toss-up; NH to Tilt D; TX to Likely R",
+     detail:"Inside Elections released a new Senate ratings set June 25. GA and NC moved from Lean D to Toss-up (other raters still Lean D); NH moved from Lean D to Tilt D; TX moved from Lean R to Likely R. These are IE-only moves — Cook, Sabato, 270toWin, and Ballotpedia have not updated yet."},
     {id:"gasen", tag:"primary", dist:"GA Senate",
      sum:"Collins wins GOP runoff &mdash; sets up Ossoff fall fight",
-     detail:"Rep. Mike Collins (R) defeated Derek Dooley 55%-45% in the June 16 runoff. Trump endorsed Collins just two days before the vote; Dooley, a former Tennessee football coach, had outgoing Gov. Brian Kemp's backing. Collins now faces Sen. Jon Ossoff (D) in one of the most expensive Senate races on the map."},
+     detail:"Rep. Mike Collins (R) defeated Derek Dooley 55%-45% in the June 16 runoff. Trump endorsed Collins just two days before the vote; Dooley had outgoing Gov. Brian Kemp's backing. Collins now faces Sen. Jon Ossoff (D) in one of the most expensive Senate races on the map."},
     {id:"me02result", tag:"primary", dist:"ME-02",
      sum:"Dunlap wins upset in ranked-choice count",
-     detail:"Joe Baldacci led first-choice votes (~32%) and had the DCCC's Red to Blue endorsement, but Matthew Dunlap won the nomination after the other candidates (Jordan Wood, Paige Loud) consolidated support against Baldacci in the RCV tabulation. Some Democratic operatives are uncertain whether the same national investment follows Dunlap. He faces Paul LePage (R) in November."},
+     detail:"Joe Baldacci led first-choice votes (~32%) and had the DCCC's Red to Blue endorsement, but Matthew Dunlap won the nomination after the other candidates (Jordan Wood, Paige Loud) consolidated support against Baldacci in the RCV tabulation. He faces Paul LePage (R) in November."},
     {id:"nc11ethics", tag:"rating", dist:"NC-11",
      sum:'Cook &amp; IE: Likely R &rarr; <span style="background:#fecaca;color:#991b1b;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean R</span>',
-     detail:"Rep. Chuck Edwards (R) is now the subject of a House Ethics Committee probe into alleged inappropriate conduct toward a young female staffer, reported by Axios. Dem nominee Jamie Ager, a farmer recruited by Blue Dog Democrats, has outraised Edwards 2-to-1. Cook and Inside Elections both moved the race to Lean R on/around June 18; Sabato had already been at Lean R since May."},
-    {id:"cookwave", tag:"rating", dist:"MI-04 / IA-02",
-     sum:'Cook: Likely R &rarr; <span style="background:#fecaca;color:#991b1b;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean R</span>',
-     detail:"On June 18, Cook shifted 7 races toward Democrats, citing a worsening political environment for the GOP. Besides NC-11, MI-04 (Huizenga) and IA-02 (open, Hinson running for Senate) moved from Likely R to Lean R. Separately, AL-02, MN-01, OH-07, and SC-01 moved from Safe to Likely R \u2014 still not competitive enough to track here."},
-    {id:"nj07update", tag:"primary", dist:"NJ-07",
-     sum:"Bennett (D) formally set as nominee vs. absent Kean",
-     detail:"Navy veteran Rebecca Bennett won the June 2 Dem primary outright and has spent June hammering Rep. Tom Kean's (R) continued absence \u2014 99 missed votes since March 5 with no detailed explanation. Inside Elections moved the race to Tilt D on June 11; betting markets put Democratic odds near 75-78%, up sharply from the low 40s in early spring."},
+     detail:"Rep. Chuck Edwards (R) is now the subject of a House Ethics Committee probe into alleged inappropriate conduct toward a young female staffer. Dem nominee Jamie Ager, a farmer recruited by Blue Dog Democrats, has outraised Edwards 2-to-1. Cook and Inside Elections both moved the race to Lean R on/around June 18; Sabato had already been at Lean R since May."},
     {id:"ny17", tag:"primary", dist:"NY-17",
      sum:"Conley wins crowded primary &mdash; faces Lawler",
-     detail:"Army veteran Cait Conley, a former National Security Council and CISA official, defeated 4 rivals (Beth Davidson, Effie Phillips-Staley, and two others) with about 49% of the vote in this 5-way June 23 primary. She'll face Rep. Mike Lawler (R) in one of the cycle's most closely watched Hudson Valley races."},
+     detail:"Army veteran Cait Conley, a former National Security Council and CISA official, defeated 4 rivals with about 49% of the vote in this 5-way June 23 primary. She'll face Rep. Mike Lawler (R) in one of the cycle's most closely watched Hudson Valley races."},
     {id:"sc01", tag:"note", dist:"SC-01",
      sum:"All-female general set in open Mace seat",
-     detail:"Charleston County Councilwoman Jenny Costa Honeycutt won the June 23 GOP runoff 54%-46%, and retired Navy Vice Admiral Nancy Lacore (removed from her post by Defense Secretary Hegseth) won the Dem runoff 52%-48%, after Rep. Nancy Mace left the seat to run for (and lose) governor. NOT TRACKED \u2014 R+6 seat, Cook still rates it Likely R \u2014 but a notable open-seat result."},
+     detail:"Jenny Costa Honeycutt won the June 23 GOP runoff 54%-46%, and retired Navy Vice Admiral Nancy Lacore won the Dem runoff 52%-48%, after Rep. Nancy Mace left the seat to run for (and lose) governor. NOT TRACKED — R+6 seat, Cook still rates it Likely R — but a notable open-seat result."},
   ],
 };
 
@@ -224,15 +232,15 @@ const HOUSE_COMPETITIVE=[
 ];
 
 const SENATE_COMPETITIVE=[
-  {district:"GA",incumbent:"Collins (R) vs. Ossoff (D)",cook:"Toss-up",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
+  {district:"GA",incumbent:"Collins (R) vs. Ossoff (D)",cook:"Toss-up",sabato:"Lean D",t270:"Lean D",ie:"Toss-up",bp:"Lean D"},
   {district:"IA",incumbent:"Turek (D) vs. Hinson (R)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
   {district:"ME",incumbent:"Collins (R) vs. Platner (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
   {district:"MI",incumbent:"Open (D retiring)",cook:"Toss-up",sabato:"Tilt D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
-  {district:"NC",incumbent:"Open (R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
-  {district:"NH",incumbent:"Open (D retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
-  {district:"OH (special)",incumbent:"Husted (R) vs. Brown (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
+  {district:"NC",incumbent:"Open (R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Toss-up",bp:"Lean D"},
+  {district:"NH",incumbent:"Open (D retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Tilt D",bp:"Lean D"},
+  {district:"OH (special)",incumbent:"Husted (R) vs. Brown (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
   {district:"AK",incumbent:"Sullivan (R) vs. Peltola (D)",cook:"Lean R",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
-  {district:"TX",incumbent:"Ken Paxton (R nominee)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
+  {district:"TX",incumbent:"Paxton (R) vs. Talarico (D)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Likely R",bp:"Lean R"},
 ];
 
 const HOUSE_LEANING=[
@@ -240,6 +248,7 @@ const HOUSE_LEANING=[
   {district:"CA-13",incumbent:"Adam Gray (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"CA-45",incumbent:"Derek Tran (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"CA-48",incumbent:"Open (Issa, R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
+  {district:"FL-09",incumbent:"Darren Soto (D)",cook:"Likely R",sabato:"N/A",t270:"N/A",ie:"Likely R",bp:"N/A"},
   {district:"FL-14",incumbent:"Kathy Castor (D)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"N/A"},
   {district:"FL-22",incumbent:"Open (Frankel, D, running in FL-23)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"N/A"},
   {district:"IA-02",incumbent:"Open (Hinson, R running for Senate)",cook:"Lean R",sabato:"Lean R",t270:"N/A",ie:"Likely R",bp:"Likely R"},
