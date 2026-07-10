@@ -83,7 +83,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "June 30, 2026";
+const LAST_UPDATED = "July 10, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -91,7 +91,7 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: June 30, 2026",
+    "Refreshed: July 10, 2026",
     "NJ-07 (Kean, R) UPDATE June 30: Kean returned to the House floor today, disclosing he had been hospitalized for depression. He missed 140+ votes since March 5. 'Asking for help is not a weakness. It is a strength,' he said in his floor speech. Bennett (D) remains in a strong position; IE holds at Tilt D, Kalshi ~75-78% Dem. Race dynamics may shift now that the reason for absence is known.",
     "OH-01 (Landsman, D): IE joined Cook in moving Toss-up to Tilt D on June 11. 270toWin and Ballotpedia remain Toss-up; stays on this tab on consensus.",
     "IA-03 (Nunn, R): IE moved Lean R to Tilt R on June 11, tightening the race slightly in the incumbent's favor.",
@@ -99,23 +99,24 @@ const CHANGES = {
     "No other Competitive House rating changes since June 24.",
   ],
   "Competitive Senate":[
-    "Refreshed: June 30, 2026",
+    "Refreshed: July 10, 2026",
+    "ME Senate MAJOR: Graham Platner (D nom) dropped out July 8 after sexual assault allegations; Maine Dems have until July 27 to nominate replacement. Troy Jackson, Dan Kleban, Shenna Bellows, and Nirav Shah competing to replace him. Early polls show replacement candidates tied with Collins. Ratings unchanged pending new nominee selection.",
+    "AK Senate (Cook July 1): Cook moved from Lean R to Toss-up, citing ballot confusion from namesake Dan J. Sullivan potentially appearing alongside incumbent Sen. Dan S. Sullivan. Race now Toss-up across Cook/Sabato; other raters hold Lean R.",
     "GA Senate (IE June 25): IE moved from Lean D to Toss-up; Cook/Sabato/270toWin/Ballotpedia still Lean D. Collins (R) vs. Ossoff (D).",
     "NC Senate (IE June 25): IE moved from Lean D to Toss-up; all other raters still Lean D. Open seat (Tillis, R retiring).",
     "NH Senate (IE June 25): IE moved from Lean D to Tilt D. All other raters still Lean D. Open seat (Shaheen, D retiring).",
     "TX Senate POLL: NYT/Siena (June 19-27, n=656) finds Paxton and Talarico tied 47-47. Talarico leads 61%-29% among Hispanics and 58%-31% among independents; only 38% say Paxton has 'good character.' No rater has moved yet — Cook/Sabato/270/Ballotpedia hold Lean R, IE at Likely R — but watch this space.",
-    "AK Senate: Sabato moved Lean R to Toss-up on June 11, citing the close race between Sen. Dan Sullivan (R) and former Rep. Mary Peltola (D). Cook still rates it Lean R.",
     "OH Senate (special): Sabato moved Lean R to Toss-up on June 11 as well, as appointed Sen. Jon Husted (R) faces a competitive bid from former Sen. Sherrod Brown (D). Cook still rates it Toss-up (no change there).",
     "GA Senate SET: Rep. Mike Collins (R) defeated Derek Dooley 55-45 in the June 16 runoff. Collins now faces Sen. Jon Ossoff (D) in November.",
   ],
   "Leaning House":[
-    "Refreshed: June 30, 2026",
+    "Refreshed: July 10, 2026",
     "FL-09 (Soto, D) ADDED: Cook moved from Solid R to Likely R on June 29. Soto is running for re-election in his dramatically redrawn district — the DeSantis gerrymander stretched it 150 miles south from Orlando into deeply red rural counties, shifting the baseline from D+10 to R+15. IE rates it Likely R as well. Other raters TBD.",
     "Cook's June 18 wave (cited a worsening political environment for the GOP): MI-04 (Huizenga, R), NC-11 (Edwards, R), and IA-02 (open, Hinson running for Senate) all moved Likely R to Lean R.",
     "NC-11 ALSO: IE began rating the race (Lean R) for the first time. Edwards is now the subject of a House Ethics Committee probe into alleged inappropriate conduct with a staffer; Dem challenger Jamie Ager has a 2-to-1 cash-on-hand edge.",
     "MI-08 (McDonald Rivet, D): IE moved Lean D to Likely D on June 11; other raters hold at Lean D, so it stays on this tab.",
     "NY-03 and NY-19 nominees set in June 23 primaries: Suozzi (D) faces Trump/Vance-backed Michael LiPetri (R) in NY-03; Riley (D) faces Trump-backed state Sen. Peter Oberacker (R) in NY-19. No rating changes.",
-    "No other Leaning House rating changes since June 24.",
+    "No other Leaning House rating changes since June 29.",
   ],
 };
 
@@ -237,12 +238,12 @@ const HOUSE_COMPETITIVE=[
 const SENATE_COMPETITIVE=[
   {district:"GA",incumbent:"Collins (R) vs. Ossoff (D)",cook:"Toss-up",sabato:"Lean D",t270:"Lean D",ie:"Toss-up",bp:"Lean D"},
   {district:"IA",incumbent:"Turek (D) vs. Hinson (R)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
-  {district:"ME",incumbent:"Collins (R) vs. Platner (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
+  {district:"ME",incumbent:"Collins (R) vs. TBD (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
   {district:"MI",incumbent:"Open (D retiring)",cook:"Toss-up",sabato:"Tilt D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
   {district:"NC",incumbent:"Open (R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Toss-up",bp:"Lean D"},
   {district:"NH",incumbent:"Open (D retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Tilt D",bp:"Lean D"},
   {district:"OH (special)",incumbent:"Husted (R) vs. Brown (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
-  {district:"AK",incumbent:"Sullivan (R) vs. Peltola (D)",cook:"Lean R",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
+  {district:"AK",incumbent:"Sullivan (R) vs. Peltola (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
   {district:"TX",incumbent:"Paxton (R) vs. Talarico (D)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Likely R",bp:"Lean R"},
 ];
 
