@@ -95,7 +95,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "July 20, 2026";
+const LAST_UPDATED = "July 22, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -103,25 +103,20 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: July 20, 2026",
+    "Refreshed: July 22, 2026",
+    "AZ-01 (Open, Schweikert R retiring) PRIMARY July 21: Trump-backed former NFL kicker Jay Feely won the GOP nomination (~50%) over Joseph Chaplik and John Trobough. Amish Shah leads the still-uncalled Dem primary by ~5,000 votes over DCCC-backed Marlene Galan-Woods — a rematch of 2024, when Shah won the primary but lost to Schweikert. Incumbent field updated to Feely (R) vs. Shah (D, presumptive); Cook still rates the seat Toss-up.",
+    "AZ-06 (Ciscomani, R) PRIMARY July 21: Both Ciscomani and Democrat JoAnna Mendoza (a Marine Corps veteran who has out-raised him) ran unopposed, so the November matchup is set. No rating change; still Toss-up.",
     "CA-22 (Valadao, R): Sabato moved from Toss-up to Lean D on July 16, citing the district's Democratic lean and a tough environment for the GOP. Cook/270toWin/Ballotpedia hold Toss-up; IE at Tilt R. (1)",
-    "NJ-07 (Kean, R) UPDATE June 30: Kean returned to the House floor, disclosing he had been hospitalized for depression. He missed 140+ votes since March 5. 'Asking for help is not a weakness. It is a strength,' he said in his floor speech. Bennett (D) remains in a strong position; IE holds at Tilt D, Kalshi ~75-78% Dem.",
-    "OH-01 (Landsman, D): IE joined Cook in moving Toss-up to Tilt D on June 11. 270toWin and Ballotpedia remain Toss-up; stays on this tab on consensus.",
-    "IA-03 (Nunn, R): IE moved Lean R to Tilt R on June 11, tightening the race slightly in the incumbent's favor.",
     "No other Competitive House rating changes since July 16.",
   ],
   "Competitive Senate":[
-    "Refreshed: July 20, 2026",
+    "Refreshed: July 22, 2026",
     "ME Senate MAJOR UPDATE: Troy Jackson, former Maine Senate president, has effectively clinched the Democratic nomination to replace Graham Platner (who dropped out July 8 amid sexual assault allegations he denies). Rivals Nirav Shah, Shenna Bellows, Jordan Wood, and Dan Kleban all withdrew and endorsed Jackson July 19-20 after he won an overwhelming majority of convention delegates. Formal nomination expected at the July 25 special convention, ahead of the state's July 27 deadline. Incumbent field updated to Collins (R) vs. Jackson (D, presumptive nominee); ratings unchanged for now.",
-    "AK Senate (Cook July 1): Cook moved from Lean R to Toss-up, citing ballot confusion from namesake Dan J. Sullivan potentially appearing alongside incumbent Sen. Dan S. Sullivan. Race now Toss-up across Cook/Sabato; other raters hold Lean R.",
-    "GA Senate (IE June 25): IE moved from Lean D to Toss-up; Cook/Sabato/270toWin/Ballotpedia still Lean D. Collins (R) vs. Ossoff (D).",
-    "NC Senate (IE June 25): IE moved from Lean D to Toss-up; all other raters still Lean D. Open seat (Tillis, R retiring).",
-    "NH Senate (IE June 25): IE moved from Lean D to Tilt D. All other raters still Lean D. Open seat (Shaheen, D retiring).",
     "TX Senate POLL: NYT/Siena (June 19-27, n=656) finds Paxton and Talarico tied 47-47. No rater has moved yet — Cook/Sabato/270/Ballotpedia hold Lean R, IE at Likely R — but watch this space.",
     "No other Competitive Senate rating changes since July 16.",
   ],
   "Leaning House":[
-    "Refreshed: July 20, 2026",
+    "Refreshed: July 22, 2026",
     "TX-15 (De La Cruz, R) ADDED: Cook moved from Likely R to Lean R on July 16. De La Cruz faces Bobby Pulido (D) in this South Texas border district (Cook PVI R+7). Other raters TBD/N/A.",
     "CA-45 (Tran, D): Cook moved from Lean D to Likely D on July 16. Sabato/270toWin/IE/Ballotpedia hold Lean D, so it stays on this tab on consensus.",
     "NY-19 (Riley, D): Cook moved from Lean D to Likely D on July 16. Sabato/270toWin/IE/Ballotpedia hold Lean D, so it stays on this tab on consensus.",
@@ -175,8 +170,14 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of July 14-20, 2026",
+  date: "Week of July 21-22, 2026",
   items: [
+    {id:"azprimary01", tag:"primary", dist:"AZ-01",
+     sum:"Feely (R) wins nomination; Shah (D) leads, uncalled",
+     detail:"Arizona held primaries July 21 for its open, Schweikert-vacated seat — one of the most competitive in the country. Trump-backed former NFL kicker Jay Feely won the Republican nomination outright with ~50% of the vote over former state Rep. Joseph Chaplik (35%) and tech executive John Trobough (15%). On the Democratic side, 2024 nominee Amish Shah leads DCCC-backed Marlene Galan-Woods by roughly 5,000 votes (about 42%-33%) with the bulk of votes counted, but the AP has not yet called the race. Shah lost to Schweikert by ~4 points in 2024; Schweikert is now running for governor. Cook still rates the seat Toss-up."},
+    {id:"azprimary06", tag:"primary", dist:"AZ-06",
+     sum:"Ciscomani and Mendoza both unopposed; matchup set",
+     detail:"Incumbent Rep. Juan Ciscomani (R) and Democrat JoAnna Mendoza, a Marine Corps veteran, both ran unopposed in Arizona's July 21 primary, so the November matchup was set without a contest. Mendoza has out-raised Ciscomani in recent fundraising periods. Cook rates the seat a true Toss-up; Trump carried it by less than 1 point in 2024."},
     {id:"mesenreplace", tag:"primary", dist:"ME Senate",
      sum:"Troy Jackson effectively clinches Dem nomination to replace Platner",
      detail:"Former Maine Senate President Troy Jackson has all but locked down the Democratic nomination for Senate after building an overwhelming delegate lead in the July 18-19 county-level selection process. Four rivals — Nirav Shah, Shenna Bellows, Jordan Wood, and Dan Kleban — withdrew and endorsed him. Jackson entered the race after Graham Platner dropped out July 8 amid a sexual assault allegation he denies. The nomination will be formalized at a special convention this Saturday, July 25, ahead of the state's July 27 deadline. Jackson, a fifth-generation logger from Allagash, ran on Medicare-for-All and abolishing ICE; he'll face Sen. Susan Collins (R) in November."},
@@ -238,8 +239,8 @@ function renderPrimary(){
 }
 
 const HOUSE_COMPETITIVE=[
-  {district:"AZ-01",incumbent:"Open (Schweikert, R retiring)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Open seat after Schweikert retirement. District shifted ~4 pts R in 2024. Top Dem target."},
-  {district:"AZ-06",incumbent:"Juan Ciscomani (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"One of the most evenly divided districts nationally. Trump won by less than 1 pt in 2024."},
+  {district:"AZ-01",incumbent:"Feely (R) vs. Shah (D, presumptive)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"July 21 primary: Trump-backed former NFL kicker Jay Feely won the GOP nod (~50%) over Chaplik and Trobough. Amish Shah leads the still-uncalled Dem primary by ~5,000 votes over Marlene Galan-Woods (a rematch of 2024, when Shah won the primary but lost to Schweikert). Open seat after Schweikert's retirement to run for governor; district shifted ~4 pts R in 2024. Top Dem target."},
+  {district:"AZ-06",incumbent:"Ciscomani (R) vs. Mendoza (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Both nominees ran unopposed in the July 21 primary, so the November matchup is already set. Mendoza (Marine Corps veteran) has out-raised Ciscomani. One of the most evenly divided districts nationally; Trump won by less than 1 pt in 2024."},
   {district:"CA-22",incumbent:"David Valadao (R)",cook:"Toss-up",sabato:"Lean D",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up",note:"District redrawn for 2026. Valadao advanced through CA top-two primary. Sabato moved from Toss-up to Lean D on July 16. (1)"},
   {district:"CO-08",incumbent:"Gabe Evans (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Freshman R flipped Dem-held seat in 2024. Suburban/exurban Denver; one of few R-held seats Harris won."},
   {district:"FL-25",incumbent:"Jared Moskowitz (D, redistricted)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"N/A",note:"Completely redrawn coastal seat (Miami Beach to Boca Raton); Trump won new lines 54-45 in 2024. Moskowitz moved over from his old FL-23. Wasserman Schultz's old FL-25 was dismantled; she is running in Solid-D FL-20. FL Supreme Court declined to block the new map June 9. (5)"},
