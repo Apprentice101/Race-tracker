@@ -80,7 +80,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
       <span style="font-size:13px;font-weight:500;color:#991b1b">⚠ Election News Alert</span>
     </div>
     <ul style="margin:8px 0 0 16px;font-size:12px;color:#4b5563">
-      <li><span style="font-weight:500">SC Senate Special Runoff Set:</span> In the Aug. 11 special primary to fill the late Sen. Lindsey Graham's seat, Trump-endorsed interim Sen. Darline Graham finished first with about a third of the vote but fell short of a majority. She advances to an Aug. 25 runoff against Rep. Ralph Norman, who — along with fellow non-endorsed candidate Rep. Russell Fry — combined for roughly two-thirds of the GOP vote. Trump held a tele-rally for Graham this week, calling her essential to "make America great again."</li>
+      <li><span style="font-weight:500">Scandal-Plagued Rep. Cory Mills Ousted:</span> In the Aug. 18 FL-07 GOP primary, Trump-endorsed Rep. Cory Mills lost to former TV news anchor Ryan Elijah 47%-34%, amid House Ethics Committee and Justice Department investigations into domestic-violence and campaign-finance allegations. Two of Mills' own GOP colleagues, Reps. Anna Paulina Luna and Mike Haridopolos, took the rare step of endorsing his challenger; Gov. DeSantis also declined to back him. Cook moved the seat from Likely R to Lean R. Elijah faces Democrat Bale Dalton in November.</li>
     </ul>
   </div>
 
@@ -92,7 +92,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "August 12, 2026";
+const LAST_UPDATED = "August 19, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -100,27 +100,23 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: August 12, 2026",
-    "OH-07 ADDED: Cook joined Sabato at Toss-up Aug. 10 (from Likely R) after Rep. Max Miller (R) vowed to stay on the ballot despite House Ethics Committee scrutiny and domestic-abuse allegations from his ex-wife, Bernie Moreno's daughter. A recent poll had Dem Brian Poindexter leading by 14 points. MOVED here from Leaning House.",
-    "NC-11 MAJOR/ADDED (Aug. 5): Rep. Chuck Edwards (R) withdrew from re-election after the House Ethics Committee found 'substantial evidence' of misconduct and recommended censure. NC GOP's district executive committee will pick his replacement to face Jamie Ager (D). MOVED here from Leaning House.",
-    "NC-01 and FL-14 ADDED (July 30): Sabato moved both Davis (D) and Castor (D) from Lean R to Toss-up in a 13-race batch shift toward Democrats. MOVED here from Leaning House.",
-    "MI-07, VA-02, WA-03 primary nominees SET (Aug. 4): Lawrence (D) faces Barrett (R); Luria (D) sets up a Kiggans rematch; Braun (R) faces Perez (D). No rating changes.",
-    "AZ-01 (Feely R vs. Shah D) CALLED July 22. CA-22 (Valadao, R): Sabato at Lean D since July 16.",
+    "Refreshed: August 19, 2026",
+    "FL-25 primary SET (Aug. 18): Moskowitz beat DSA-backed Larkin 63%-37% in the Dem primary; Scott Singer (R) won a 5-way GOP field. Toss-up across all raters.",
+    "FL-14 primary SET (Aug. 18): Mike Beltran won an 8-way GOP primary to face Castor (D). Sabato at Toss-up since July 30; other raters Lean R.",
+    "OH-07, NC-11, NC-01 all added in the past two weeks — see prior refreshes.",
     "No other Competitive House rating changes since Aug. 10.",
   ],
   "Competitive Senate":[
-    "Refreshed: August 12, 2026",
-    "MI Senate SET (Aug. 4): Progressive Abdul El-Sayed narrowly beat Rep. Haley Stevens (48.5%-47.5%). Faces Republican Mike Rogers. Ratings unchanged.",
-    "AK & OH (special) Senate: Sabato moved both to Toss-up July 30, matching Cook.",
-    "ME Senate FINALIZED July 25: Collins (R) vs. Jackson (D).",
+    "Refreshed: August 19, 2026",
+    "AK Senate primary CONFIRMED (Aug. 18): Mary Peltola (D) led the all-party primary with 48% to Sullivan's 43%, advancing both to the ranked-choice general along with two others. Cook/Sabato hold Toss-up; 270/IE/Ballotpedia at Lean R.",
+    "MI Senate SET (Aug. 4): El-Sayed (D) vs. Rogers (R). ME Senate FINALIZED July 25: Collins (R) vs. Jackson (D).",
     "TX Senate POLL: TPOR poll found Talarico leading Paxton 45%-40% (released July 28). No rater has moved.",
     "No other Competitive Senate rating changes since July 30.",
   ],
   "Leaning House":[
-    "Refreshed: August 12, 2026",
-    "OH-07, NC-01, NC-11, FL-14 REMOVED (see Competitive House — all upgraded to Toss-up and moved tabs).",
-    "TX-15 (De La Cruz, R): Sabato moved to Lean R July 30, matching Cook.",
-    "NY-19 (Riley, D): Sabato moved to Likely D July 30, matching Cook. 270toWin/IE/Ballotpedia hold Lean D, so it stays on this tab on consensus.",
+    "Refreshed: August 19, 2026",
+    "FL-07 ADDED (Aug. 18): Cook moved from Likely R to Lean R after scandal-plagued Rep. Cory Mills lost his primary to Ryan Elijah, who faces Democrat Bale Dalton. See Election News Alert.",
+    "AK-AL top-four field SET (Aug. 18): Begich (R, incumbent) led with 46%, independent Bill Hill 31% (endorsed by withdrawn Dem candidate Matt Schultz), and two Democrats rounding out the ranked-choice field. No rating change.",
     "No other Leaning House rating changes since July 30.",
   ],
 };
@@ -170,32 +166,26 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of Aug. 6-12, 2026",
+  date: "Week of Aug. 13-19, 2026",
   items: [
-    {id:"oh07cooktossup", tag:"rating", dist:"OH-07",
-     sum:"Cook joins Sabato at Toss-up as Miller stays in race",
-     detail:"Cook Political Report moved Rep. Max Miller's (R) seat from Likely R to Toss-up on Aug. 10, matching Sabato's July 30 move. Miller has refused to leave the race despite domestic-abuse allegations from his ex-wife, Emily Moreno — daughter of Sen. Bernie Moreno (R-OH), who has called Miller unfit to serve — and a House Ethics Committee investigation. The Aug. 10 deadline for Ohio county chairs to nominate a replacement candidate passed with Miller still on the ballot. A co/efficient poll showed Democrat Brian Poindexter leading by 14 points, up from a prior 5-point margin. MOVED to Competitive House."},
-    {id:"mnsenprimary", tag:"note", dist:"MN Senate",
-     sum:"Flanagan beats Craig in progressive-vs-moderate test; faces Tafoya",
-     detail:"Lt. Gov. Peggy Flanagan defeated Rep. Angie Craig 58.8%-39.7% in the Aug. 11 DFL primary for retiring Sen. Tina Smith's open seat, a race widely read as a test of the party's appetite for a harder line against Trump's immigration enforcement (Flanagan hammered Craig's vote for the Laken Riley Act). Flanagan, who would be the first Native American woman in the Senate, faces Republican Michele Tafoya, a former NFL sideline reporter who easily beat 2024 nominee Royce White and Navy SEAL Adam Schwarze. NOT TRACKED — Cook and Sabato both rate the open seat Likely D — but a marquee race nationally."},
-    {id:"mn02primary", tag:"note", dist:"MN-02",
-     sum:"Little wins crowded primary for Craig's open seat; faces Pratt",
-     detail:"Former state Sen. Matt Little won a 4-way DFL primary Aug. 11 for Rep. Angie Craig's open, competitive 2nd District seat (Craig ran for Senate — see above). He faces state Sen. Eric Pratt, who ran unopposed for the GOP nod after Tyler Kistner dropped out in April for Marine Reserve duty. NOT TRACKED — Cook rates it Likely D — but Minnesota's only open congressional race this cycle."},
-    {id:"wiprimaries", tag:"note", dist:"WI Governor / WI-07",
-     sum:"Crowley edges Hong; Tiffany wins GOP nod, vacating WI-07",
-     detail:"In the open-seat race to succeed retiring Gov. Tony Evers, Milwaukee County Executive David Crowley narrowly beat democratic-socialist state Rep. Francesca Hong in a tight Aug. 11 Dem primary after reviving a campaign he'd briefly suspended in July with Evers' late endorsement. He faces Trump-endorsed Rep. Tom Tiffany (R), who won the GOP nod easily. Tiffany's move to the governor's race vacates his rural, solidly Republican WI-07 seat, where his son-in-law Michael Alfonso is among the Republicans running. NOT TRACKED — neither the governor's race nor WI-07 are tracked congressional races, though WI-07 is one to watch as an open seat."},
-    {id:"ct01primary", tag:"note", dist:"CT-01",
-     sum:"Bronin ousts 14-term Rep. Larson in generational upset",
-     detail:"Former Hartford Mayor Luke Bronin, 47, defeated 78-year-old 14-term Rep. John Larson in the Aug. 11 Democratic primary, the latest sign of the party's base pushing for generational change — NPR notes over 80 Gen Z/millennial Democrats are challenging or succeeding House Democrats 65+ this cycle, up from 24 last cycle. NOT TRACKED — Safe D seat — but a notable incumbent defeat."},
-    {id:"scsenrunoff", tag:"note", dist:"SC Senate (special)",
-     sum:"Graham advances to Aug. 25 runoff against Norman",
-     detail:"In the Aug. 11 special GOP primary to fill the late Sen. Lindsey Graham's seat, Trump-endorsed interim Sen. Darline Graham finished first with about a third of the vote but missed the majority needed to win outright. She heads to an Aug. 25 runoff against Rep. Ralph Norman, a House Freedom Caucus member endorsed by Sens. Mike Lee and Rick Scott; Norman and fellow non-Trump-endorsed candidate Rep. Russell Fry combined for roughly two-thirds of the vote. NOT TRACKED — Solid R seat — but a test of Trump's endorsement power amid his lowest second-term approval yet."},
-    {id:"al02primary", tag:"note", dist:"AL-02",
-     sum:"Marques wins GOP nod in redrawn district; faces Figures",
-     detail:"State Rep. Rhett Marques, endorsed by Trump and Sen. Katie Britt, won a crowded six-candidate Aug. 11 special GOP primary (about 50%) to challenge Rep. Shomari Figures (D) in Alabama's redrawn 2nd District. Republicans reshaped the district after a Supreme Court ruling weakened Voting Rights Act protections, cutting Mobile (Figures' base) out of the seat and dropping its Black voting-age population from 48% to 40%; Cook moved it from Solid to Likely R in June. Both parties have made it a top priority. NOT TRACKED — Likely R, short of the Toss-up/Lean threshold — but one of the cycle's highest-profile redistricting fights."},
-    {id:"vtprimary", tag:"note", dist:"VT-AL",
-     sum:"Balint unopposed; GOP nominee still TBD",
-     detail:"Rep. Becca Balint (D) ran unopposed in Vermont's Aug. 11 Democratic primary for the state's lone at-large House seat. NOT TRACKED — Safe D — included for completeness on this week's six-state primary night."},
+    {id:"fl07mills", tag:"rating", dist:"FL-07",
+     sum:'Cook: Likely R &rarr; <span style="background:#fecaca;color:#991b1b;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean R</span>',
+     detail:"Trump-endorsed Rep. Cory Mills lost the Aug. 18 GOP primary to former TV news anchor Ryan Elijah, 47%-34%, amid House Ethics Committee and Justice Department investigations into domestic-violence and campaign-finance allegations. Reps. Anna Paulina Luna and Mike Haridopolos took the rare step of endorsing against a sitting colleague; Gov. DeSantis said he didn't support Mills either. Cook moved the seat from Likely R to Lean R. Elijah faces Democrat Bale Dalton in November. ADDED to Leaning House."},
+    {id:"fl14fl25primaries", tag:"primary", dist:"FL-14 / FL-25",
+     sum:"Beltran and Moskowitz set up two of Florida's marquee races",
+     detail:"In FL-14, former state Rep. Mike Beltran won an 8-way GOP primary (backed by an under-the-radar county-party ballot-guide controversy) to challenge Rep. Kathy Castor, whose district was redrawn roughly 10 points more Republican. In FL-25 — the new coastal seat stretching from Boca Raton to Miami Beach that absorbed pieces of the old 23rd, 24th, and 25th Districts — Rep. Jared Moskowitz beat DSA-backed Oliver Larkin 63%-37%, and former Boca Raton Mayor Scott Singer won a crowded 5-way GOP field. Both races remain rated Toss-up/Lean R on this tracker."},
+    {id:"aksenprimary", tag:"rating", dist:"AK Senate",
+     sum:"Peltola outpolls Sullivan in all-party primary, 48%-43%",
+     detail:"Former Rep. Mary Peltola topped Alaska's Aug. 18 all-party primary for Senate with 48% of the vote to incumbent Sen. Dan Sullivan's 43% — a notable result given the ballot also included a second, unrelated candidate also named Dan Sullivan. Both advance to the November ranked-choice general along with two others rounding out the top four. If elected, Peltola would be the first Alaska Native/Native Hawaiian woman in the Senate. Cook and Sabato hold the race at Toss-up."},
+    {id:"akalprimary", tag:"primary", dist:"AK-AL",
+     sum:"Begich leads top-four field; independent Hill edges Democrats",
+     detail:"Rep. Nick Begich III led Alaska's at-large House primary with 46% of the vote. Independent Bill Hill (31%) advanced as the leading alternative after Democrat Matt Schultz suspended his campaign in July and endorsed him, though Schultz (8%) remained on the ballot and also advanced along with Democrat Eric Hafner (3.8%) to round out the ranked-choice field. No rating change — still Likely R/Lean R across raters."},
+    {id:"flsensepcial", tag:"note", dist:"FL Senate (special)",
+     sum:"Nixon upsets Vindman in Dem primary; faces Moody",
+     detail:"Florida state Rep. Angie Nixon, a member of the Democratic Socialists of America, defeated retired Lt. Col. Alexander Vindman — the more centrist, better-funded, nationally known 2019 impeachment witness — by about 12 points in the Aug. 18 special Senate primary. She faces appointed GOP Sen. Ashley Moody, who is completing the final two years of Marco Rubio's term after his move to secretary of state. NOT TRACKED — prediction markets and forecasters put Moody at 88-93% to win — but a notable primary upset."},
+    {id:"wyprimaries", tag:"note", dist:"WY Senate / WY-AL / Governor",
+     sum:"Hageman wins Senate primary; Trump's governor pick loses",
+     detail:"Rep. Harriet Hageman won the Aug. 18 GOP primary for Wyoming's open Senate seat (Sen. Cynthia Lummis retiring) with 65% of the vote; she'll face Democrat James Byrd. Secretary of State Chuck Gray won a crowded 9-way primary for Hageman's now-open at-large House seat and faces Democrat Lisa Kinney. Trump had mixed results: Hageman was his pick and won comfortably, but his endorsed candidate for governor, Megan Degenfelder, lost to state Sen. Eric Barlow — Trump's third losing gubernatorial pick this cycle, after Iowa, Georgia, and South Carolina. NOT TRACKED — Wyoming is Solid R up and down the ballot."},
   ],
 };
 
@@ -219,8 +209,8 @@ const HOUSE_COMPETITIVE=[
   {district:"AZ-06",incumbent:"Ciscomani (R) vs. Mendoza (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Both nominees ran unopposed in the July 21 primary, so the November matchup is already set. Mendoza (Marine Corps veteran) has out-raised Ciscomani. One of the most evenly divided districts nationally; Trump won by less than 1 pt in 2024."},
   {district:"CA-22",incumbent:"David Valadao (R)",cook:"Toss-up",sabato:"Lean D",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up",note:"District redrawn for 2026. Valadao advanced through CA top-two primary. Sabato moved from Toss-up to Lean D on July 16. (1)"},
   {district:"CO-08",incumbent:"Gabe Evans (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Freshman R flipped Dem-held seat in 2024. Suburban/exurban Denver; one of few R-held seats Harris won."},
-  {district:"FL-14",incumbent:"Kathy Castor (D)",cook:"Lean R",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"N/A",note:"MOVED from Leaning House: Sabato upgraded from Lean R to Toss-up July 30 as part of a 13-race batch shift toward Democrats, citing Castor's long Tampa name ID even after redistricting pushed the seat to ~55% Trump. Eight Republicans compete in the Aug. 18 GOP primary; nominee TBD."},
-  {district:"FL-25",incumbent:"Jared Moskowitz (D, redistricted)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"N/A",note:"Completely redrawn coastal seat (Miami Beach to Boca Raton); Trump won new lines 54-45 in 2024. Moskowitz moved over from his old FL-23. Wasserman Schultz's old FL-25 was dismantled; she is running in Solid-D FL-20. FL Supreme Court declined to block the new map June 9. (5)"},
+  {district:"FL-14",incumbent:"Castor (D) vs. Beltran (R)",cook:"Lean R",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"N/A",note:"Aug. 18 primary: Former state Rep. Mike Beltran won the 8-way GOP primary. Sabato upgraded from Lean R to Toss-up July 30 as part of a 13-race batch shift toward Democrats, citing Castor's long Tampa name ID even after redistricting pushed the seat to ~55% Trump."},
+  {district:"FL-25",incumbent:"Moskowitz (D) vs. Singer (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"N/A",note:"Aug. 18 primary: Moskowitz beat DSA-backed Oliver Larkin 63%-37% in the Dem primary; former Boca Raton Mayor Scott Singer won a 5-way GOP field with 31%. Completely redrawn coastal seat (Miami Beach to Boca Raton); Trump won new lines 54-45 in 2024. Moskowitz moved over from his old FL-23. Wasserman Schultz's old FL-25 was dismantled; she is running in Solid-D FL-20. FL Supreme Court declined to block the new map June 9. (5)"},
   {district:"IA-01",incumbent:"Mariannette Miller-Meeks (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Narrowest R House win in 2024 -- won by 799 votes (0.2%). Dem Bohannan running again."},
   {district:"IA-03",incumbent:"Zach Nunn (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up",note:"Suburban Des Moines district won by Nunn 51.8% in 2024. IE moved from Toss-up to Tilt R on June 11."},
   {district:"MI-07",incumbent:"Barrett (R) vs. Lawrence (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 primary: Progressive organizer William Lawrence won the Dem nomination. Freshman R Barrett won this open Lansing-area seat in 2024; Trump won narrowly."},
@@ -249,16 +239,17 @@ const SENATE_COMPETITIVE=[
   {district:"NC",incumbent:"Open (R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Toss-up",bp:"Lean D"},
   {district:"NH",incumbent:"Open (D retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Tilt D",bp:"Lean D"},
   {district:"OH (special)",incumbent:"Husted (R) vs. Brown (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
-  {district:"AK",incumbent:"Sullivan (R) vs. Peltola (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
+  {district:"AK",incumbent:"Sullivan (R) vs. Peltola (D, top-4 confirmed)",cook:"Toss-up",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
   {district:"TX",incumbent:"Paxton (R) vs. Talarico (D)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Likely R",bp:"Lean R"},
 ];
 
 const HOUSE_LEANING=[
-  {district:"AK-AL",incumbent:"Nick Begich (R)",cook:"Likely R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
+  {district:"AK-AL",incumbent:"Begich (R) vs. Hill (I, top-4 set)",cook:"Likely R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
   {district:"CA-13",incumbent:"Adam Gray (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"CA-45",incumbent:"Derek Tran (D)",cook:"Likely D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"CA-48",incumbent:"Open (Issa, R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"FL-09",incumbent:"Darren Soto (D)",cook:"Likely R",sabato:"N/A",t270:"N/A",ie:"Likely R",bp:"N/A"},
+  {district:"FL-07",incumbent:"Elijah (R) vs. Dalton (D)",cook:"Lean R",sabato:"N/A",t270:"N/A",ie:"N/A",bp:"N/A"},
   {district:"FL-22",incumbent:"Open (Frankel, D, running in FL-23)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"N/A"},
   {district:"IA-02",incumbent:"Open (Hinson, R running for Senate)",cook:"Lean R",sabato:"Lean R",t270:"N/A",ie:"Likely R",bp:"Likely R"},
   {district:"ME-02",incumbent:"Dunlap (D) vs. LePage (R)",cook:"Likely R",sabato:"Likely R",t270:"Likely R",ie:"Lean R",bp:"Likely R"},
