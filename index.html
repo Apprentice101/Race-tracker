@@ -80,7 +80,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
       <span style="font-size:13px;font-weight:500;color:#991b1b">⚠ Election News Alert</span>
     </div>
     <ul style="margin:8px 0 0 16px;font-size:12px;color:#4b5563">
-      <li><span style="font-weight:500">Scandal-Plagued Rep. Cory Mills Ousted:</span> In the Aug. 18 FL-07 GOP primary, Trump-endorsed Rep. Cory Mills lost to former TV news anchor Ryan Elijah 47%-34%, amid House Ethics Committee and Justice Department investigations into domestic-violence and campaign-finance allegations. Two of Mills' own GOP colleagues, Reps. Anna Paulina Luna and Mike Haridopolos, took the rare step of endorsing his challenger; Gov. DeSantis also declined to back him. Cook moved the seat from Likely R to Lean R. Elijah faces Democrat Bale Dalton in November.</li>
+      <li><span style="font-weight:500">SC Senate Runoff: Graham Defeats Norman:</span> Sen. Darline Graham beat Rep. Ralph Norman 52%-48% in the Aug. 25 special GOP runoff for her late brother Lindsey Graham's seat. Trump went all-in for Graham — recruiting her, endorsing her, and holding an Aug. 21 rally in Myrtle Beach — after she stumbled in a debate by admitting "I'm not that informed on national security." She faces Democrat Dr. Annie Andrews in November; no Democrat has won a SC Senate seat in decades. NOT TRACKED — Solid R — but a marquee test of Trump's endorsement power.</li>
     </ul>
   </div>
 
@@ -92,7 +92,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "August 19, 2026";
+const LAST_UPDATED = "August 26, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -100,23 +100,22 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: August 19, 2026",
-    "FL-25 primary SET (Aug. 18): Moskowitz beat DSA-backed Larkin 63%-37% in the Dem primary; Scott Singer (R) won a 5-way GOP field. Toss-up across all raters.",
-    "FL-14 primary SET (Aug. 18): Mike Beltran won an 8-way GOP primary to face Castor (D). Sabato at Toss-up since July 30; other raters Lean R.",
-    "OH-07, NC-11, NC-01 all added in the past two weeks — see prior refreshes.",
+    "Refreshed: August 26, 2026",
+    "NC-11 nominee SET (Aug. 10): NC GOP executive committee picked state Rep. Jennifer Balkcom to replace Chuck Edwards, who withdrew Aug. 5. She faces Jamie Ager. Sabato at Toss-up.",
+    "FL-25 and FL-14 primary nominees SET (Aug. 18) — see last week's refresh.",
     "No other Competitive House rating changes since Aug. 10.",
   ],
   "Competitive Senate":[
-    "Refreshed: August 19, 2026",
-    "AK Senate primary CONFIRMED (Aug. 18): Mary Peltola (D) led the all-party primary with 48% to Sullivan's 43%, advancing both to the ranked-choice general along with two others. Cook/Sabato hold Toss-up; 270/IE/Ballotpedia at Lean R.",
+    "Refreshed: August 26, 2026",
+    "AK Senate primary CONFIRMED (Aug. 18): Peltola (D) 48%, Sullivan (R) 43%; both advance to the ranked-choice general.",
     "MI Senate SET (Aug. 4): El-Sayed (D) vs. Rogers (R). ME Senate FINALIZED July 25: Collins (R) vs. Jackson (D).",
     "TX Senate POLL: TPOR poll found Talarico leading Paxton 45%-40% (released July 28). No rater has moved.",
     "No other Competitive Senate rating changes since July 30.",
   ],
   "Leaning House":[
-    "Refreshed: August 19, 2026",
-    "FL-07 ADDED (Aug. 18): Cook moved from Likely R to Lean R after scandal-plagued Rep. Cory Mills lost his primary to Ryan Elijah, who faces Democrat Bale Dalton. See Election News Alert.",
-    "AK-AL top-four field SET (Aug. 18): Begich (R, incumbent) led with 46%, independent Bill Hill 31% (endorsed by withdrawn Dem candidate Matt Schultz), and two Democrats rounding out the ranked-choice field. No rating change.",
+    "Refreshed: August 26, 2026",
+    "FL-07 ADDED (Aug. 18): Cook moved to Lean R after Cory Mills lost his primary — see last week's refresh.",
+    "AK-AL top-four field SET (Aug. 18): Begich (R) led with 46%; independent Bill Hill 31%.",
     "No other Leaning House rating changes since July 30.",
   ],
 };
@@ -166,26 +165,17 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of Aug. 13-19, 2026",
+  date: "Week of Aug. 20-26, 2026",
   items: [
-    {id:"fl07mills", tag:"rating", dist:"FL-07",
-     sum:'Cook: Likely R &rarr; <span style="background:#fecaca;color:#991b1b;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean R</span>',
-     detail:"Trump-endorsed Rep. Cory Mills lost the Aug. 18 GOP primary to former TV news anchor Ryan Elijah, 47%-34%, amid House Ethics Committee and Justice Department investigations into domestic-violence and campaign-finance allegations. Reps. Anna Paulina Luna and Mike Haridopolos took the rare step of endorsing against a sitting colleague; Gov. DeSantis said he didn't support Mills either. Cook moved the seat from Likely R to Lean R. Elijah faces Democrat Bale Dalton in November. ADDED to Leaning House."},
-    {id:"fl14fl25primaries", tag:"primary", dist:"FL-14 / FL-25",
-     sum:"Beltran and Moskowitz set up two of Florida's marquee races",
-     detail:"In FL-14, former state Rep. Mike Beltran won an 8-way GOP primary (backed by an under-the-radar county-party ballot-guide controversy) to challenge Rep. Kathy Castor, whose district was redrawn roughly 10 points more Republican. In FL-25 — the new coastal seat stretching from Boca Raton to Miami Beach that absorbed pieces of the old 23rd, 24th, and 25th Districts — Rep. Jared Moskowitz beat DSA-backed Oliver Larkin 63%-37%, and former Boca Raton Mayor Scott Singer won a crowded 5-way GOP field. Both races remain rated Toss-up/Lean R on this tracker."},
-    {id:"aksenprimary", tag:"rating", dist:"AK Senate",
-     sum:"Peltola outpolls Sullivan in all-party primary, 48%-43%",
-     detail:"Former Rep. Mary Peltola topped Alaska's Aug. 18 all-party primary for Senate with 48% of the vote to incumbent Sen. Dan Sullivan's 43% — a notable result given the ballot also included a second, unrelated candidate also named Dan Sullivan. Both advance to the November ranked-choice general along with two others rounding out the top four. If elected, Peltola would be the first Alaska Native/Native Hawaiian woman in the Senate. Cook and Sabato hold the race at Toss-up."},
-    {id:"akalprimary", tag:"primary", dist:"AK-AL",
-     sum:"Begich leads top-four field; independent Hill edges Democrats",
-     detail:"Rep. Nick Begich III led Alaska's at-large House primary with 46% of the vote. Independent Bill Hill (31%) advanced as the leading alternative after Democrat Matt Schultz suspended his campaign in July and endorsed him, though Schultz (8%) remained on the ballot and also advanced along with Democrat Eric Hafner (3.8%) to round out the ranked-choice field. No rating change — still Likely R/Lean R across raters."},
-    {id:"flsensepcial", tag:"note", dist:"FL Senate (special)",
-     sum:"Nixon upsets Vindman in Dem primary; faces Moody",
-     detail:"Florida state Rep. Angie Nixon, a member of the Democratic Socialists of America, defeated retired Lt. Col. Alexander Vindman — the more centrist, better-funded, nationally known 2019 impeachment witness — by about 12 points in the Aug. 18 special Senate primary. She faces appointed GOP Sen. Ashley Moody, who is completing the final two years of Marco Rubio's term after his move to secretary of state. NOT TRACKED — prediction markets and forecasters put Moody at 88-93% to win — but a notable primary upset."},
-    {id:"wyprimaries", tag:"note", dist:"WY Senate / WY-AL / Governor",
-     sum:"Hageman wins Senate primary; Trump's governor pick loses",
-     detail:"Rep. Harriet Hageman won the Aug. 18 GOP primary for Wyoming's open Senate seat (Sen. Cynthia Lummis retiring) with 65% of the vote; she'll face Democrat James Byrd. Secretary of State Chuck Gray won a crowded 9-way primary for Hageman's now-open at-large House seat and faces Democrat Lisa Kinney. Trump had mixed results: Hageman was his pick and won comfortably, but his endorsed candidate for governor, Megan Degenfelder, lost to state Sen. Eric Barlow — Trump's third losing gubernatorial pick this cycle, after Iowa, Georgia, and South Carolina. NOT TRACKED — Wyoming is Solid R up and down the ballot."},
+    {id:"scsenrunoff", tag:"note", dist:"SC Senate (special)",
+     sum:"Graham defeats Norman 52%-48% in Trump-backed runoff",
+     detail:"Sen. Darline Graham beat Rep. Ralph Norman in the Aug. 25 special GOP runoff to keep her late brother Lindsey Graham's seat, 52%-48%. Trump recruited her, endorsed her, and held an Aug. 21 rally for her in Myrtle Beach after she stumbled in a pre-runoff debate, admitting on a foreign-policy question, 'I'm not that informed on national security' — drawing boos. Norman, a five-term House Freedom Caucus member who'd also run (and lost) for governor earlier this year, conceded gracefully: 'I hate it for the state ... but the public of South Carolina made the decision.' Graham faces Democrat Dr. Annie Andrews in November. NOT TRACKED — Solid R, and no Democrat has won a SC Senate seat in decades — but a marquee test of Trump's endorsement power after a mixed August."},
+    {id:"nc11balkcom", tag:"rating", dist:"NC-11",
+     sum:"NC GOP selects Balkcom as Edwards' replacement nominee",
+     detail:"The NC-11 Republican Executive Committee unanimously chose state Rep. Jennifer Balkcom, an eighth-generation farmer and mortgage loan officer from Henderson County, over five other contenders on Aug. 10 to replace Chuck Edwards on the November ballot. Edwards withdrew Aug. 5 after the House Ethics Committee recommended censure over conduct toward two young staffers. Balkcom, endorsed by NC House Speaker Destin Hall, faces Democrat Jamie Ager, who has substantially out-raised her. This was previously noted as an open nominee slot; the incumbent field on this tracker now reflects Balkcom's selection."},
+    {id:"otherrunoffs", tag:"note", dist:"OK / GA runoffs",
+     sum:"Oklahoma and Georgia held statewide runoffs Aug. 25",
+     detail:"Oklahoma Republicans nominated Mike Mazzei for governor in a primary runoff; the state's U.S. Senate seat (Sen. Markwayne Mullin) was not on this year's ballot and remains Solid R. Georgia held Aug. 25 primary runoffs for down-ballot statewide and legislative seats; the state's marquee Senate race (Collins vs. Ossoff) was already decided in the June 16 GOP runoff. NOT TRACKED — neither state has a competitive federal race on this tracker."},
   ],
 };
 
@@ -215,7 +205,7 @@ const HOUSE_COMPETITIVE=[
   {district:"IA-03",incumbent:"Zach Nunn (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up",note:"Suburban Des Moines district won by Nunn 51.8% in 2024. IE moved from Toss-up to Tilt R on June 11."},
   {district:"MI-07",incumbent:"Barrett (R) vs. Lawrence (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 primary: Progressive organizer William Lawrence won the Dem nomination. Freshman R Barrett won this open Lansing-area seat in 2024; Trump won narrowly."},
   {district:"NC-01",incumbent:"Davis (D) vs. Buckhout (R)",cook:"Lean R",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R",note:"MOVED from Leaning House: Sabato upgraded from Lean R to Toss-up July 30, one of 13 races shifted toward Democrats. Davis faces a rematch with 2024 opponent Laurie Buckhout in a district redrawn to ~55% Trump; a Libertarian is also on the ballot."},
-  {district:"NC-11",incumbent:"Open (Edwards withdrew) vs. Ager (D)",cook:"Lean R",sabato:"Toss-up",t270:"N/A",ie:"Lean R",bp:"N/A",note:"MAJOR: Rep. Chuck Edwards (R) withdrew from re-election Aug. 5, two days after the House Ethics Committee found 'substantial evidence' he violated House rules with persistent inappropriate conduct toward two young female staffers; the committee recommended censure. Edwards will finish his term. Under NC law, the district's GOP executive committee — not a new primary — will pick his replacement nominee. Sabato had already moved the race from Lean R to Toss-up July 30, citing Edwards' weak fundraising ($155K in Q2) and the ethics probe; Dem Jamie Ager raised 9x more."},
+  {district:"NC-11",incumbent:"Balkcom (R) vs. Ager (D)",cook:"Lean R",sabato:"Toss-up",t270:"N/A",ie:"Lean R",bp:"N/A",note:"Rep. Chuck Edwards (R) withdrew from re-election Aug. 5 after the House Ethics Committee found 'substantial evidence' of persistent inappropriate conduct toward two young female staffers and recommended censure; he'll finish his term. The NC-11 GOP executive committee unanimously chose state Rep. Jennifer Balkcom as his replacement on Aug. 10, over five other contenders. Sabato moved the race from Lean R to Toss-up July 30, citing Edwards' weak fundraising and the ethics probe; Dem Jamie Ager (the March primary winner) has out-raised Balkcom substantially."},
   {district:"NE-02",incumbent:"Open (Bacon, R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Open seat; Harris won by ~4.6 pts in 2024. Cook joined Sabato at Lean D in June; IE and 270toWin still Toss-up. Only NE district allocating its Electoral Vote independently. (4)"},
   {district:"NJ-07",incumbent:"Bennett (D) vs. Kean (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Kean returned to Congress June 30, disclosing he had been hospitalized for depression — missed 140+ votes since March 5. 'Asking for help is not a weakness. It is a strength.' Bennett (D, Navy veteran) defeated 3 rivals June 2; IE moved to Tilt D June 11; Kalshi markets ~75-78% Dem."},
   {district:"NY-17",incumbent:"Conley (D) vs. Lawler (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up",note:"Army veteran/NSC alum Cait Conley won the June 23 Dem primary outright (~49% in a 5-way field) and faces Lawler in November. One of only 3 R incumbents in Harris-won districts. Lawler mulling governor run. (2)"},
