@@ -80,7 +80,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
       <span style="font-size:13px;font-weight:500;color:#991b1b">⚠ Election News Alert</span>
     </div>
     <ul style="margin:8px 0 0 16px;font-size:12px;color:#4b5563">
-      <li><span style="font-weight:500">SC Senate Runoff: Graham Defeats Norman:</span> Sen. Darline Graham beat Rep. Ralph Norman 52%-48% in the Aug. 25 special GOP runoff for her late brother Lindsey Graham's seat. Trump went all-in for Graham — recruiting her, endorsing her, and holding an Aug. 21 rally in Myrtle Beach — after she stumbled in a debate by admitting "I'm not that informed on national security." She faces Democrat Dr. Annie Andrews in November; no Democrat has won a SC Senate seat in decades. NOT TRACKED — Solid R — but a marquee test of Trump's endorsement power.</li>
+      <li><span style="font-weight:500">USPS Whistleblower: Mail Ballot System "Rushed, Chaotic, Fundamentally Flawed":</span> A complaint released Sept. 1 by Sen. Richard Blumenthal's (D-Conn.) office, via Whistleblower Aid, alleges the Postal Service is rushing an untested IT system for the Trump administration's mail-ballot restrictions ahead of November — checking barcodes against state-submitted voter lists — and that a single flagged ballot could cause an entire batch mailing to be rejected, risking "catastrophic failure" for millions of voters. The whistleblower says USPS resumed the work in July in defiance of a court order, racing a self-imposed Sept. 1 deadline. A federal judge in Massachusetts has the plan frozen under a temporary injunction while she considers a permanent ban; the fight is expected to reach the Supreme Court. (Source: Votebeat)</li>
     </ul>
   </div>
 
@@ -92,7 +92,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "August 26, 2026";
+const LAST_UPDATED = "September 2, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -100,23 +100,24 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: August 26, 2026",
-    "NC-11 nominee SET (Aug. 10): NC GOP executive committee picked state Rep. Jennifer Balkcom to replace Chuck Edwards, who withdrew Aug. 5. She faces Jamie Ager. Sabato at Toss-up.",
-    "FL-25 and FL-14 primary nominees SET (Aug. 18) — see last week's refresh.",
-    "No other Competitive House rating changes since Aug. 10.",
+    "Refreshed: September 2, 2026",
+    "TX-15 ADDED: Sabato moved from Lean R to Toss-up Aug. 26. De La Cruz (R) faces Bobby Pulido (D). MOVED here from Leaning House.",
+    "NC-11 nominee SET (Aug. 10): Balkcom (R) replaces Edwards, faces Ager (D). Sabato at Toss-up.",
+    "No other Competitive House rating changes since Aug. 26.",
   ],
   "Competitive Senate":[
-    "Refreshed: August 26, 2026",
+    "Refreshed: September 2, 2026",
+    "TX Senate MAJOR: Cook moved from Lean R to Toss-up Aug. 20, citing GOP funders' hesitance to bankroll Paxton's defense after his primary win. Other raters hold Lean R/Likely R.",
+    "IA Senate: Cook moved from Lean R to Toss-up Aug. 20 in the same batch. Other raters hold Lean R.",
     "AK Senate primary CONFIRMED (Aug. 18): Peltola (D) 48%, Sullivan (R) 43%; both advance to the ranked-choice general.",
     "MI Senate SET (Aug. 4): El-Sayed (D) vs. Rogers (R). ME Senate FINALIZED July 25: Collins (R) vs. Jackson (D).",
-    "TX Senate POLL: TPOR poll found Talarico leading Paxton 45%-40% (released July 28). No rater has moved.",
-    "No other Competitive Senate rating changes since July 30.",
+    "No other Competitive Senate rating changes since Aug. 20.",
   ],
   "Leaning House":[
-    "Refreshed: August 26, 2026",
-    "FL-07 ADDED (Aug. 18): Cook moved to Lean R after Cory Mills lost his primary — see last week's refresh.",
-    "AK-AL top-four field SET (Aug. 18): Begich (R) led with 46%; independent Bill Hill 31%.",
-    "No other Leaning House rating changes since July 30.",
+    "Refreshed: September 2, 2026",
+    "TX-15 REMOVED (see Competitive House — Sabato upgraded to Toss-up Aug. 26 and moved tabs).",
+    "FL-07 ADDED (Aug. 18): Cook moved to Lean R after Cory Mills lost his primary — see prior refresh.",
+    "No other Leaning House rating changes since Aug. 18.",
   ],
 };
 
@@ -165,17 +166,23 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of Aug. 20-26, 2026",
+  date: "Week of Aug. 27-Sept. 2, 2026",
   items: [
-    {id:"scsenrunoff", tag:"note", dist:"SC Senate (special)",
-     sum:"Graham defeats Norman 52%-48% in Trump-backed runoff",
-     detail:"Sen. Darline Graham beat Rep. Ralph Norman in the Aug. 25 special GOP runoff to keep her late brother Lindsey Graham's seat, 52%-48%. Trump recruited her, endorsed her, and held an Aug. 21 rally for her in Myrtle Beach after she stumbled in a pre-runoff debate, admitting on a foreign-policy question, 'I'm not that informed on national security' — drawing boos. Norman, a five-term House Freedom Caucus member who'd also run (and lost) for governor earlier this year, conceded gracefully: 'I hate it for the state ... but the public of South Carolina made the decision.' Graham faces Democrat Dr. Annie Andrews in November. NOT TRACKED — Solid R, and no Democrat has won a SC Senate seat in decades — but a marquee test of Trump's endorsement power after a mixed August."},
-    {id:"nc11balkcom", tag:"rating", dist:"NC-11",
-     sum:"NC GOP selects Balkcom as Edwards' replacement nominee",
-     detail:"The NC-11 Republican Executive Committee unanimously chose state Rep. Jennifer Balkcom, an eighth-generation farmer and mortgage loan officer from Henderson County, over five other contenders on Aug. 10 to replace Chuck Edwards on the November ballot. Edwards withdrew Aug. 5 after the House Ethics Committee recommended censure over conduct toward two young staffers. Balkcom, endorsed by NC House Speaker Destin Hall, faces Democrat Jamie Ager, who has substantially out-raised her. This was previously noted as an open nominee slot; the incumbent field on this tracker now reflects Balkcom's selection."},
-    {id:"otherrunoffs", tag:"note", dist:"OK / GA runoffs",
-     sum:"Oklahoma and Georgia held statewide runoffs Aug. 25",
-     detail:"Oklahoma Republicans nominated Mike Mazzei for governor in a primary runoff; the state's U.S. Senate seat (Sen. Markwayne Mullin) was not on this year's ballot and remains Solid R. Georgia held Aug. 25 primary runoffs for down-ballot statewide and legislative seats; the state's marquee Senate race (Collins vs. Ossoff) was already decided in the June 16 GOP runoff. NOT TRACKED — neither state has a competitive federal race on this tracker."},
+    {id:"txsenIAsentossup", tag:"rating", dist:"TX Senate / IA Senate",
+     sum:'Cook: Lean R &rarr; <span style="background:#fef9c3;color:#854d0e;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Toss-up</span>',
+     detail:"Cook Political Report moved both open Senate races — Texas (Paxton vs. Talarico) and Iowa (Hinson vs. Turek) — from Lean R to Toss-up on Aug. 20. On Texas, Cook cited reluctance among establishment GOP donors to fully fund Ken Paxton's defense after his bruising primary win, plus a Libertarian on the ballot who could complicate his path to 50%. Sabato followed by moving TX-15 (De La Cruz) to Toss-up on Aug. 26, citing the same tightening trend. Other raters (Sabato, 270toWin, Ballotpedia) still hold TX and IA Senate at Lean R; IE has TX at Likely R."},
+    {id:"masenprimary", tag:"note", dist:"MA Senate",
+     sum:"Markey turns back Moulton's age-focused challenge, 65%-35%",
+     detail:"Sen. Ed Markey, who turns 80 this year, defeated Rep. Seth Moulton by a wider-than-expected 30-point margin in the Sept. 1 Democratic primary, after Moulton argued the party needed 'a new generation of leadership.' Markey carried Boston, Worcester, and Springfield by 40+ points and won all but 12 of the state's municipalities — even Salem, Moulton's hometown. He faces Republican John Deaton, who ran unopposed, in November. NOT TRACKED — Cook, Sabato, Inside Elections, and 270toWin all rate the race Solid/Safe D — but a notable proxy fight over generational change following similar upsets in CT-01 and elsewhere this cycle."},
+    {id:"ma06primary", tag:"note", dist:"MA-06",
+     sum:"Koh wins open-seat primary to succeed Moulton",
+     detail:"Dan Koh, a former Andover town manager and Boston mayoral chief of staff, won the Sept. 1 Democratic primary for the open 6th District seat that Moulton is vacating to run for Senate. NOT TRACKED — Safe D."},
+    {id:"votebeatusps", tag:"note", dist:"National",
+     sum:"USPS mail-ballot system rushed and flawed, whistleblower says",
+     detail:"See the Election News Alert above for the full USPS whistleblower story reported by Votebeat. In brief: a complaint released by Sen. Blumenthal's office alleges the Postal Service is rushing an untested ballot-screening IT system tied to Trump's mail-voting executive order, with a single flagged ballot potentially voiding an entire batch mailing. The plan remains frozen by a Massachusetts federal judge's injunction pending further litigation."},
+    {id:"votebeatstates", tag:"note", dist:"MI / TX (administration)",
+     sum:"Votebeat: Michigan blocks ballot measure; Texas suspense-list voters can still vote",
+     detail:"In Michigan, the state elections board deadlocked Aug. 25 along party lines and did not certify a proposed constitutional amendment — one of the strictest proof-of-citizenship voting requirements in the country — for the November ballot, per Votebeat's Michigan bureau. In Texas, Votebeat reported Aug. 31 that voters placed on the state's 'suspense list' (those flagged over address or registration questions) can still cast a ballot if they confirm their information with their county elections office; the piece runs through the steps to do so. Neither story changes any race ratings on this tracker but reflects the broader administrative and legal turbulence around this fall's elections."},
   ],
 };
 
@@ -215,6 +222,7 @@ const HOUSE_COMPETITIVE=[
   {district:"PA-07",incumbent:"Ryan Mackenzie (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Lehigh Valley true swing seat. Mackenzie flipped from Dem Wild by ~4,000 votes in 2024."},
   {district:"PA-08",incumbent:"Rob Bresnahan (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Moved Lean R to Toss-up Apr. 7. Bresnahan faces scrutiny over 600+ stock trades. (3)"},
   {district:"PA-10",incumbent:"Scott Perry (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Former Freedom Caucus chair won by just 1 pt in 2024. IE moved from Tilt R to Toss-up May 21. Dem Stelson running again."},
+  {district:"TX-15",incumbent:"Monica De La Cruz (R)",cook:"Lean R",sabato:"Toss-up",t270:"N/A",ie:"N/A",bp:"N/A",note:"MOVED from Leaning House: Sabato moved from Lean R to Toss-up Aug. 26. South Texas border district (Cook PVI R+7); De La Cruz faces Bobby Pulido (D)."},
   {district:"TX-34",incumbent:"Vicente Gonzalez (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"South Texas majority-Latino district redrawn by R legislature. Trump won by 10 pts in 2024."},
   {district:"VA-02",incumbent:"Kiggans (R) vs. Luria (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 primary: Former Rep. Elaine Luria won the Dem nod, setting up a rematch — Kiggans unseated Luria in 2022. Reverted to Toss-up May 8 after VA Supreme Court struck down the Democratic gerrymander."},
   {district:"WA-03",incumbent:"Perez (D) vs. Braun (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 top-two primary set the matchup: state Senate Minority Leader John Braun advances as the Republican. Perez narrowly flipped this SW Washington seat in 2024; Trump won district."},
@@ -223,14 +231,14 @@ const HOUSE_COMPETITIVE=[
 
 const SENATE_COMPETITIVE=[
   {district:"GA",incumbent:"Collins (R) vs. Ossoff (D)",cook:"Toss-up",sabato:"Lean D",t270:"Lean D",ie:"Toss-up",bp:"Lean D"},
-  {district:"IA",incumbent:"Turek (D) vs. Hinson (R)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
+  {district:"IA",incumbent:"Turek (D) vs. Hinson (R)",cook:"Toss-up",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
   {district:"ME",incumbent:"Collins (R) vs. Jackson (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
   {district:"MI",incumbent:"Rogers (R) vs. El-Sayed (D)",cook:"Toss-up",sabato:"Tilt D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
   {district:"NC",incumbent:"Open (R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Toss-up",bp:"Lean D"},
   {district:"NH",incumbent:"Open (D retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Tilt D",bp:"Lean D"},
   {district:"OH (special)",incumbent:"Husted (R) vs. Brown (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
   {district:"AK",incumbent:"Sullivan (R) vs. Peltola (D, top-4 confirmed)",cook:"Toss-up",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
-  {district:"TX",incumbent:"Paxton (R) vs. Talarico (D)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Likely R",bp:"Lean R"},
+  {district:"TX",incumbent:"Paxton (R) vs. Talarico (D)",cook:"Toss-up",sabato:"Lean R",t270:"Lean R",ie:"Likely R",bp:"Lean R"},
 ];
 
 const HOUSE_LEANING=[
@@ -253,7 +261,6 @@ const HOUSE_LEANING=[
   {district:"NY-19",incumbent:"Riley (D) vs. Oberacker (R)",cook:"Likely D",sabato:"Likely D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"OH-13",incumbent:"Emilia Sykes (D)",cook:"Likely D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"PA-01",incumbent:"Brian Fitzpatrick (R)",cook:"Likely R",sabato:"Likely R",t270:"Likely R",ie:"Lean R",bp:"Likely R"},
-  {district:"TX-15",incumbent:"Monica De La Cruz (R)",cook:"Lean R",sabato:"Lean R",t270:"N/A",ie:"N/A",bp:"N/A"},
   {district:"TX-28",incumbent:"Henry Cuellar (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"VA-01",incumbent:"Rob Wittman (R)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
 ];
