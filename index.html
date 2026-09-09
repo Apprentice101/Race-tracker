@@ -80,7 +80,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
       <span style="font-size:13px;font-weight:500;color:#991b1b">⚠ Election News Alert</span>
     </div>
     <ul style="margin:8px 0 0 16px;font-size:12px;color:#4b5563">
-      <li><span style="font-weight:500">USPS Whistleblower: Mail Ballot System "Rushed, Chaotic, Fundamentally Flawed":</span> A complaint released Sept. 1 by Sen. Richard Blumenthal's (D-Conn.) office, via Whistleblower Aid, alleges the Postal Service is rushing an untested IT system for the Trump administration's mail-ballot restrictions ahead of November — checking barcodes against state-submitted voter lists — and that a single flagged ballot could cause an entire batch mailing to be rejected, risking "catastrophic failure" for millions of voters. The whistleblower says USPS resumed the work in July in defiance of a court order, racing a self-imposed Sept. 1 deadline. A federal judge in Massachusetts has the plan frozen under a temporary injunction while she considers a permanent ban; the fight is expected to reach the Supreme Court. (Source: Votebeat)</li>
+      <li><span style="font-weight:500">Report: Musk's "votesafe.org" Is a Voter Data-Harvesting Operation:</span> A Sept. 8 Popular Information investigation found that votesafe.org — a voter-registration checker Elon Musk's America PAC is promoting with heavy ad spending in key states — collects far more than the federal government's official vote.gov (which collects nothing) and, since an Aug. 29 privacy-policy change, can now sell users' data and "inferences" about them to unnamed "business partners." The site reportedly feeds visitor names, addresses, and contact info to Meta, Google, X, and ad-tracking firms, and its white-labeled infrastructure powers Heritage-linked Sentinel Action Fund's registration site and Ready to Register, which North Carolina election officials say has sent inaccurate mailings to voters. <a href="https://popular.info/p/the-hidden-dangers-of-musks-votesafeorg" target="_blank" rel="noopener noreferrer">Read the full Popular Information piece</a>.</li>
     </ul>
   </div>
 
@@ -92,7 +92,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "September 2, 2026";
+const LAST_UPDATED = "September 9, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -100,24 +100,19 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: September 2, 2026",
-    "TX-15 ADDED: Sabato moved from Lean R to Toss-up Aug. 26. De La Cruz (R) faces Bobby Pulido (D). MOVED here from Leaning House.",
-    "NC-11 nominee SET (Aug. 10): Balkcom (R) replaces Edwards, faces Ager (D). Sabato at Toss-up.",
-    "No other Competitive House rating changes since Aug. 26.",
+    "Refreshed: September 9, 2026",
+    "TX-15 and NC-11 nominee/rating updates — see prior refreshes.",
+    "No new Competitive House rating changes since Aug. 26.",
   ],
   "Competitive Senate":[
-    "Refreshed: September 2, 2026",
-    "TX Senate MAJOR: Cook moved from Lean R to Toss-up Aug. 20, citing GOP funders' hesitance to bankroll Paxton's defense after his primary win. Other raters hold Lean R/Likely R.",
-    "IA Senate: Cook moved from Lean R to Toss-up Aug. 20 in the same batch. Other raters hold Lean R.",
-    "AK Senate primary CONFIRMED (Aug. 18): Peltola (D) 48%, Sullivan (R) 43%; both advance to the ranked-choice general.",
-    "MI Senate SET (Aug. 4): El-Sayed (D) vs. Rogers (R). ME Senate FINALIZED July 25: Collins (R) vs. Jackson (D).",
+    "Refreshed: September 9, 2026",
+    "NH Senate nominees SET (Sept. 8): Chris Pappas (D) beat a crowded field; John E. Sununu (R) also won his primary. Cook still rates the race Lean D. Incumbent field updated to Sununu (R) vs. Pappas (D).",
+    "TX and IA Senate: Cook moved both to Toss-up Aug. 20 — see prior refresh.",
     "No other Competitive Senate rating changes since Aug. 20.",
   ],
   "Leaning House":[
-    "Refreshed: September 2, 2026",
-    "TX-15 REMOVED (see Competitive House — Sabato upgraded to Toss-up Aug. 26 and moved tabs).",
-    "FL-07 ADDED (Aug. 18): Cook moved to Lean R after Cory Mills lost his primary — see prior refresh.",
-    "No other Leaning House rating changes since Aug. 18.",
+    "Refreshed: September 9, 2026",
+    "No Leaning House rating changes since Aug. 18.",
   ],
 };
 
@@ -166,23 +161,23 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of Aug. 27-Sept. 2, 2026",
+  date: "Week of Sept. 3-9, 2026",
   items: [
-    {id:"txsenIAsentossup", tag:"rating", dist:"TX Senate / IA Senate",
-     sum:'Cook: Lean R &rarr; <span style="background:#fef9c3;color:#854d0e;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Toss-up</span>',
-     detail:"Cook Political Report moved both open Senate races — Texas (Paxton vs. Talarico) and Iowa (Hinson vs. Turek) — from Lean R to Toss-up on Aug. 20. On Texas, Cook cited reluctance among establishment GOP donors to fully fund Ken Paxton's defense after his bruising primary win, plus a Libertarian on the ballot who could complicate his path to 50%. Sabato followed by moving TX-15 (De La Cruz) to Toss-up on Aug. 26, citing the same tightening trend. Other raters (Sabato, 270toWin, Ballotpedia) still hold TX and IA Senate at Lean R; IE has TX at Likely R."},
-    {id:"masenprimary", tag:"note", dist:"MA Senate",
-     sum:"Markey turns back Moulton's age-focused challenge, 65%-35%",
-     detail:"Sen. Ed Markey, who turns 80 this year, defeated Rep. Seth Moulton by a wider-than-expected 30-point margin in the Sept. 1 Democratic primary, after Moulton argued the party needed 'a new generation of leadership.' Markey carried Boston, Worcester, and Springfield by 40+ points and won all but 12 of the state's municipalities — even Salem, Moulton's hometown. He faces Republican John Deaton, who ran unopposed, in November. NOT TRACKED — Cook, Sabato, Inside Elections, and 270toWin all rate the race Solid/Safe D — but a notable proxy fight over generational change following similar upsets in CT-01 and elsewhere this cycle."},
-    {id:"ma06primary", tag:"note", dist:"MA-06",
-     sum:"Koh wins open-seat primary to succeed Moulton",
-     detail:"Dan Koh, a former Andover town manager and Boston mayoral chief of staff, won the Sept. 1 Democratic primary for the open 6th District seat that Moulton is vacating to run for Senate. NOT TRACKED — Safe D."},
-    {id:"votebeatusps", tag:"note", dist:"National",
-     sum:"USPS mail-ballot system rushed and flawed, whistleblower says",
-     detail:"See the Election News Alert above for the full USPS whistleblower story reported by Votebeat. In brief: a complaint released by Sen. Blumenthal's office alleges the Postal Service is rushing an untested ballot-screening IT system tied to Trump's mail-voting executive order, with a single flagged ballot potentially voiding an entire batch mailing. The plan remains frozen by a Massachusetts federal judge's injunction pending further litigation."},
-    {id:"votebeatstates", tag:"note", dist:"MI / TX (administration)",
-     sum:"Votebeat: Michigan blocks ballot measure; Texas suspense-list voters can still vote",
-     detail:"In Michigan, the state elections board deadlocked Aug. 25 along party lines and did not certify a proposed constitutional amendment — one of the strictest proof-of-citizenship voting requirements in the country — for the November ballot, per Votebeat's Michigan bureau. In Texas, Votebeat reported Aug. 31 that voters placed on the state's 'suspense list' (those flagged over address or registration questions) can still cast a ballot if they confirm their information with their county elections office; the piece runs through the steps to do so. Neither story changes any race ratings on this tracker but reflects the broader administrative and legal turbulence around this fall's elections."},
+    {id:"nhsenprimary", tag:"primary", dist:"NH Senate",
+     sum:"Pappas and Sununu win crowded Senate primaries",
+     detail:"Rep. Chris Pappas (D) and former Sen. John E. Sununu (R) each won contested Sept. 8 primaries for New Hampshire's open Senate seat, being vacated by retiring Sen. Jeanne Shaheen. Cook rates the race Lean D — one of the cycle's premier battlegrounds and a race Democrats consider close to must-win. Incumbent field updated to Sununu (R) vs. Pappas (D)."},
+    {id:"nh01primary", tag:"note", dist:"NH-01",
+     sum:"Nail-biter: Shaheen and Sullivan neck-and-neck for Pappas's open seat",
+     detail:"With Pappas vacating his seat to run for Senate, the Sept. 8 Democratic primary for NH-01 came down to the wire between Stefany Shaheen (Sen. Jeanne Shaheen's daughter, a former Portsmouth city councilor) and Maura Sullivan (a Marine Corps veteran who ran for the same seat in 2018); the race remained too close to call late into election night, with Shaheen edging ahead by roughly 2 points on partial returns. Republican Anthony DiLorenzo won his primary easily. NOT TRACKED — Cook, Sabato, and IE all rate the seat Likely D — but a genuine nail-biter worth watching for margin."},
+    {id:"nh02primary", tag:"note", dist:"NH-02",
+     sum:"Goodlander cruises to renomination, sets up rematch",
+     detail:"Rep. Maggie Goodlander (D), in her first term, easily defeated a primary challenge from state Rep. Paige Beauchemin on Sept. 8 and heads to a general-election rematch with her 2024 Republican opponent. NOT TRACKED — not a competitive seat."},
+    {id:"riprimary", tag:"note", dist:"RI Governor / RI-01",
+     sum:"McKee narrowly survives despite being outspent 3-to-1 and trailing by 20-38 points in every poll",
+     detail:"Gov. Dan McKee (D) appears to have narrowly won renomination in the Sept. 9 Democratic primary against former CVS executive Helena Foulkes, according to the AP — a stunning result given every public poll of the race (Emerson/WPRI, UNH, Pell Center/Embold) had shown Foulkes ahead by 15 to 38 points for months, driven largely by voter anger over the unfinished Washington Bridge closure. The money gap made it look even more lopsided: Foulkes outraised McKee roughly 3-to-1 in Q2 ($900K to $253K) and outspent him about 3-to-1 on TV ads (an AdImpact-tracked $2.2 million to $670,000); McKee's campaign went dark on television for over two weeks in August amid a cash crunch, at one point down to just $200,000 on hand versus her $1.8 million. Outside spending piled on against him too, including a $500,000 anti-McKee ad campaign from the clean-energy Invest in Tomorrow Coalition PAC just eight days before the primary. A loss would have made McKee the first sitting RI governor to lose a primary in over 30 years and the first elected governor nationally to lose renomination since 2014; instead this is the second straight cycle he's edged out Foulkes, after beating her by just 3,326 votes in their 2022 matchup. Separately, Rep. Gabe Amo (D) was renominated in RI-01. NOT TRACKED — not a congressional race and Rhode Island's federal seats are not competitive — but a marquee story of a primary defying both the polls and the money."},
+    {id:"votesafealert", tag:"note", dist:"National",
+     sum:"Report: Musk's votesafe.org harvests and sells voter data",
+     detail:"See the Election News Alert above for the full rundown of the Popular Information investigation into votesafe.org, the Musk-backed voter-registration site being heavily promoted via paid ads in competitive states. Unlike the federal government's vote.gov, which collects no personal data, votesafe.org gathers extensive personal information and — after an Aug. 29 privacy-policy change — can now sell it and share behavioral 'inferences' with unnamed partners; the data pipeline reportedly also powers Heritage-linked and other allied registration sites, one of which North Carolina officials say has sent inaccurate mailings to voters."},
   ],
 };
 
@@ -235,7 +230,7 @@ const SENATE_COMPETITIVE=[
   {district:"ME",incumbent:"Collins (R) vs. Jackson (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
   {district:"MI",incumbent:"Rogers (R) vs. El-Sayed (D)",cook:"Toss-up",sabato:"Tilt D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up"},
   {district:"NC",incumbent:"Open (R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Toss-up",bp:"Lean D"},
-  {district:"NH",incumbent:"Open (D retiring)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Tilt D",bp:"Lean D"},
+  {district:"NH",incumbent:"Sununu (R) vs. Pappas (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Tilt D",bp:"Lean D"},
   {district:"OH (special)",incumbent:"Husted (R) vs. Brown (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up"},
   {district:"AK",incumbent:"Sullivan (R) vs. Peltola (D, top-4 confirmed)",cook:"Toss-up",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
   {district:"TX",incumbent:"Paxton (R) vs. Talarico (D)",cook:"Toss-up",sabato:"Lean R",t270:"Lean R",ie:"Likely R",bp:"Lean R"},
