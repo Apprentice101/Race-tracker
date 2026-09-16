@@ -92,7 +92,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "September 15, 2026";
+const LAST_UPDATED = "September 16, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -100,19 +100,21 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: September 15, 2026",
+    "Refreshed: September 16, 2026",
     "TX-34 (Gonzalez, D): Sabato moved from Toss-up to Lean D Sept. 10. Cook/270toWin/IE/Ballotpedia hold Toss-up, so it stays on consensus.",
     "MO-05 (Cleaver, D) NOT ADDED: The Missouri Supreme Court struck down the state's GOP-drawn map Sept. 3, restoring the 2022 lines for November — reverting Cleaver's seat from a Trump+18 toss-up back to a safe Democratic district. Cook and Sabato both moved it to Safe/Solid D Sept. 10-11. See Primary Results panel for the full story.",
+    "DE-AL NOT ADDED: Sept. 15 primary — Arminio (R) won a three-way GOP primary and will face Rep. McBride (D, unopposed) in November. Safe D, not competitive. See Primary Results panel.",
     "No other Competitive House rating changes since Aug. 26.",
   ],
   "Competitive Senate":[
-    "Refreshed: September 15, 2026",
+    "Refreshed: September 16, 2026",
     "NH Senate nominees SET (Sept. 8): Sununu (R) vs. Pappas (D) — see prior refresh.",
     "TX and IA Senate: Cook moved both to Toss-up Aug. 20 — see prior refresh.",
+    "DE NOT ADDED: Sept. 15 primary — the last of the 2026 cycle — set Coons (D, renominated) vs. Katz (R) for November. Safe D, not competitive. See Primary Results panel.",
     "No other Competitive Senate rating changes since Aug. 20.",
   ],
   "Leaning House":[
-    "Refreshed: September 15, 2026",
+    "Refreshed: September 16, 2026",
     "No Leaning House rating changes since Aug. 18.",
   ],
 };
@@ -162,8 +164,11 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of Sept. 10-15, 2026",
+  date: "Week of Sept. 10-16, 2026",
   items: [
+    {id:"deprimary", tag:"primary", dist:"DE (Senate & At-Large)",
+     sum:"Delaware's Sept. 15 primaries — the last of the 2026 cycle — set Coons vs. Katz and McBride vs. Arminio",
+     detail:"Delaware closed out the nation's 2026 primary calendar Sept. 15. In the Senate Democratic primary, Sen. Chris Coons turned back three little-known challengers — Jeff Appelhans, Mary Louve, and E. No-Trump Hansen (formerly Eric Hansen) — to win renomination, as expected (prediction markets had him near-certain; he won his 2020 primary with ~73%). On the Republican side, Dr. Mike Katz defeated John Shulli for the Senate nod and will face Coons in November. In the at-large House race, Rep. Sarah McBride (D) was unopposed for a second term. Wilmington native Joseph Arminio (a political scientist with a doctorate from MIT) won the three-way GOP primary — 46% to John Whalen III's 33% and Earl Cooper's 22% in initial returns — and will face McBride in November. Both seats remain Safe D; NOT ADDED to any tab, but the results complete this cycle's primary calendar nationwide."},
     {id:"moredistricting", tag:"rating", dist:"MO-05",
      sum:'Cook & Sabato: Safe R &rarr; <span style="background:#dbeafe;color:#1e3a8a;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Safe/Solid D</span>',
      detail:"The Missouri Supreme Court ruled unanimously Sept. 3 that the GOP-drawn congressional map passed in a 2025 special session cannot be used this November, ordering a referendum on it instead and restoring the 2022 lines for the general election. The now-defunct new map had carved up Kansas City to turn Rep. Emanuel Cleaver's Democratic 5th District into a Trump+18 seat; under the reinstated 2022 lines, Cleaver — who won his last two races with 60%+ — returns to a safe Democratic seat. Cook and Sabato both moved the district from Safe/Solid Republican to Safe/Solid Democrat on Sept. 10-11. Missouri AG Catherine Hanaway is appealing to the U.S. Supreme Court, which has already once declined (via Justice Kavanaugh) to block the state court's ruling. The map itself goes before voters as a referendum on the same November ballot. This closes the loop on the marquee redistricting fight covered in this tracker's Aug. 5 update. NOT ADDED to any tab — Safe D, not competitive — but a major national story given the fight over the House majority."},
