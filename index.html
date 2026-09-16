@@ -80,7 +80,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
       <span style="font-size:13px;font-weight:500;color:#991b1b">⚠ Election News Alert</span>
     </div>
     <ul style="margin:8px 0 0 16px;font-size:12px;color:#4b5563">
-      <li><span style="font-weight:500">Report: Musk's "votesafe.org" Is a Voter Data-Harvesting Operation:</span> A Sept. 8 Popular Information investigation found that votesafe.org — a voter-registration checker Elon Musk's America PAC is promoting with heavy ad spending in key states — collects far more than the federal government's official vote.gov (which collects nothing) and, since an Aug. 29 privacy-policy change, can now sell users' data and "inferences" about them to unnamed "business partners." The site reportedly feeds visitor names, addresses, and contact info to Meta, Google, X, and ad-tracking firms, and its white-labeled infrastructure powers Heritage-linked Sentinel Action Fund's registration site and Ready to Register, which North Carolina election officials say has sent inaccurate mailings to voters. <a href="https://popular.info/p/the-hidden-dangers-of-musks-votesafeorg" target="_blank" rel="noopener noreferrer">Read the full Popular Information piece</a>.</li>
+      <li><span style="font-weight:500">Supreme Court Blocks Trump's Mail-Ballot Restrictions for 2026:</span> The Supreme Court on Sept. 14 left in place a lower-court freeze on Trump's USPS mail-ballot rules, effectively killing the plan for this November — mail voting will function largely as it has in prior elections. The unsigned order found the government "unlikely to succeed on the merits"; only Justices Alito and Thomas dissented, while Kavanaugh's concurrence said officials simply lacked time to implement the rule, leaving the door open for future cycles. The rules — which would have let USPS block delivery of ballots not on a state-submitted list and required new barcode/design standards — followed Trump's March executive order, a wave of lawsuits from 23 states, a June injunction from Judge Indira Talwani, and a whistleblower complaint warning the system could cause "catastrophic failure" for millions of mailed ballots. <a href="https://www.votebeat.org/national/2026/09/15/trump-mail-voting-executive-order-supreme-court-decision-2026-election/" target="_blank" rel="noopener noreferrer">Read the full Votebeat piece</a>.</li>
     </ul>
   </div>
 
@@ -92,7 +92,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "September 9, 2026";
+const LAST_UPDATED = "September 15, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -100,18 +100,19 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: September 9, 2026",
-    "TX-15 and NC-11 nominee/rating updates — see prior refreshes.",
-    "No new Competitive House rating changes since Aug. 26.",
+    "Refreshed: September 15, 2026",
+    "TX-34 (Gonzalez, D): Sabato moved from Toss-up to Lean D Sept. 10. Cook/270toWin/IE/Ballotpedia hold Toss-up, so it stays on consensus.",
+    "MO-05 (Cleaver, D) NOT ADDED: The Missouri Supreme Court struck down the state's GOP-drawn map Sept. 3, restoring the 2022 lines for November — reverting Cleaver's seat from a Trump+18 toss-up back to a safe Democratic district. Cook and Sabato both moved it to Safe/Solid D Sept. 10-11. See Primary Results panel for the full story.",
+    "No other Competitive House rating changes since Aug. 26.",
   ],
   "Competitive Senate":[
-    "Refreshed: September 9, 2026",
-    "NH Senate nominees SET (Sept. 8): Chris Pappas (D) beat a crowded field; John E. Sununu (R) also won his primary. Cook still rates the race Lean D. Incumbent field updated to Sununu (R) vs. Pappas (D).",
+    "Refreshed: September 15, 2026",
+    "NH Senate nominees SET (Sept. 8): Sununu (R) vs. Pappas (D) — see prior refresh.",
     "TX and IA Senate: Cook moved both to Toss-up Aug. 20 — see prior refresh.",
     "No other Competitive Senate rating changes since Aug. 20.",
   ],
   "Leaning House":[
-    "Refreshed: September 9, 2026",
+    "Refreshed: September 15, 2026",
     "No Leaning House rating changes since Aug. 18.",
   ],
 };
@@ -161,23 +162,17 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of Sept. 3-9, 2026",
+  date: "Week of Sept. 10-15, 2026",
   items: [
-    {id:"nhsenprimary", tag:"primary", dist:"NH Senate",
-     sum:"Pappas and Sununu win crowded Senate primaries",
-     detail:"Rep. Chris Pappas (D) and former Sen. John E. Sununu (R) each won contested Sept. 8 primaries for New Hampshire's open Senate seat, being vacated by retiring Sen. Jeanne Shaheen. Cook rates the race Lean D — one of the cycle's premier battlegrounds and a race Democrats consider close to must-win. Incumbent field updated to Sununu (R) vs. Pappas (D)."},
-    {id:"nh01primary", tag:"note", dist:"NH-01",
-     sum:"Nail-biter: Shaheen and Sullivan neck-and-neck for Pappas's open seat",
-     detail:"With Pappas vacating his seat to run for Senate, the Sept. 8 Democratic primary for NH-01 came down to the wire between Stefany Shaheen (Sen. Jeanne Shaheen's daughter, a former Portsmouth city councilor) and Maura Sullivan (a Marine Corps veteran who ran for the same seat in 2018); the race remained too close to call late into election night, with Shaheen edging ahead by roughly 2 points on partial returns. Republican Anthony DiLorenzo won his primary easily. NOT TRACKED — Cook, Sabato, and IE all rate the seat Likely D — but a genuine nail-biter worth watching for margin."},
-    {id:"nh02primary", tag:"note", dist:"NH-02",
-     sum:"Goodlander cruises to renomination, sets up rematch",
-     detail:"Rep. Maggie Goodlander (D), in her first term, easily defeated a primary challenge from state Rep. Paige Beauchemin on Sept. 8 and heads to a general-election rematch with her 2024 Republican opponent. NOT TRACKED — not a competitive seat."},
-    {id:"riprimary", tag:"note", dist:"RI Governor / RI-01",
-     sum:"McKee narrowly survives despite being outspent 3-to-1 and trailing by 20-38 points in every poll",
-     detail:"Gov. Dan McKee (D) appears to have narrowly won renomination in the Sept. 9 Democratic primary against former CVS executive Helena Foulkes, according to the AP — a stunning result given every public poll of the race (Emerson/WPRI, UNH, Pell Center/Embold) had shown Foulkes ahead by 15 to 38 points for months, driven largely by voter anger over the unfinished Washington Bridge closure. The money gap made it look even more lopsided: Foulkes outraised McKee roughly 3-to-1 in Q2 ($900K to $253K) and outspent him about 3-to-1 on TV ads (an AdImpact-tracked $2.2 million to $670,000); McKee's campaign went dark on television for over two weeks in August amid a cash crunch, at one point down to just $200,000 on hand versus her $1.8 million. Outside spending piled on against him too, including a $500,000 anti-McKee ad campaign from the clean-energy Invest in Tomorrow Coalition PAC just eight days before the primary. A loss would have made McKee the first sitting RI governor to lose a primary in over 30 years and the first elected governor nationally to lose renomination since 2014; instead this is the second straight cycle he's edged out Foulkes, after beating her by just 3,326 votes in their 2022 matchup. Separately, Rep. Gabe Amo (D) was renominated in RI-01. NOT TRACKED — not a congressional race and Rhode Island's federal seats are not competitive — but a marquee story of a primary defying both the polls and the money."},
-    {id:"votesafealert", tag:"note", dist:"National",
-     sum:"Report: Musk's votesafe.org harvests and sells voter data",
-     detail:"See the Election News Alert above for the full rundown of the Popular Information investigation into votesafe.org, the Musk-backed voter-registration site being heavily promoted via paid ads in competitive states. Unlike the federal government's vote.gov, which collects no personal data, votesafe.org gathers extensive personal information and — after an Aug. 29 privacy-policy change — can now sell it and share behavioral 'inferences' with unnamed partners; the data pipeline reportedly also powers Heritage-linked and other allied registration sites, one of which North Carolina officials say has sent inaccurate mailings to voters."},
+    {id:"moredistricting", tag:"rating", dist:"MO-05",
+     sum:'Cook & Sabato: Safe R &rarr; <span style="background:#dbeafe;color:#1e3a8a;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Safe/Solid D</span>',
+     detail:"The Missouri Supreme Court ruled unanimously Sept. 3 that the GOP-drawn congressional map passed in a 2025 special session cannot be used this November, ordering a referendum on it instead and restoring the 2022 lines for the general election. The now-defunct new map had carved up Kansas City to turn Rep. Emanuel Cleaver's Democratic 5th District into a Trump+18 seat; under the reinstated 2022 lines, Cleaver — who won his last two races with 60%+ — returns to a safe Democratic seat. Cook and Sabato both moved the district from Safe/Solid Republican to Safe/Solid Democrat on Sept. 10-11. Missouri AG Catherine Hanaway is appealing to the U.S. Supreme Court, which has already once declined (via Justice Kavanaugh) to block the state court's ruling. The map itself goes before voters as a referendum on the same November ballot. This closes the loop on the marquee redistricting fight covered in this tracker's Aug. 5 update. NOT ADDED to any tab — Safe D, not competitive — but a major national story given the fight over the House majority."},
+    {id:"tx34sabato", tag:"rating", dist:"TX-34",
+     sum:'Sabato: Toss-up &rarr; <span style="background:#bfdbfe;color:#1e40af;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean D</span>',
+     detail:"Sabato's Crystal Ball moved Rep. Vicente Gonzalez's South Texas seat from Toss-up to Lean Democratic on Sept. 10. Cook, 270toWin, Inside Elections, and Ballotpedia all still rate it Toss-up, so it remains on the Competitive House tab on consensus."},
+    {id:"scotusmailballot", tag:"note", dist:"National",
+     sum:"Supreme Court blocks Trump's mail-ballot restrictions for 2026",
+     detail:"See the Election News Alert above for the full rundown of the Supreme Court's Sept. 14 order, which leaves a lower-court injunction in place and effectively kills the Trump administration's USPS mail-ballot restrictions for this November's elections — a monthslong legal fight covered extensively by Votebeat."},
   ],
 };
 
@@ -218,7 +213,7 @@ const HOUSE_COMPETITIVE=[
   {district:"PA-08",incumbent:"Rob Bresnahan (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Moved Lean R to Toss-up Apr. 7. Bresnahan faces scrutiny over 600+ stock trades. (3)"},
   {district:"PA-10",incumbent:"Scott Perry (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Former Freedom Caucus chair won by just 1 pt in 2024. IE moved from Tilt R to Toss-up May 21. Dem Stelson running again."},
   {district:"TX-15",incumbent:"Monica De La Cruz (R)",cook:"Lean R",sabato:"Toss-up",t270:"N/A",ie:"N/A",bp:"N/A",note:"MOVED from Leaning House: Sabato moved from Lean R to Toss-up Aug. 26. South Texas border district (Cook PVI R+7); De La Cruz faces Bobby Pulido (D)."},
-  {district:"TX-34",incumbent:"Vicente Gonzalez (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"South Texas majority-Latino district redrawn by R legislature. Trump won by 10 pts in 2024."},
+  {district:"TX-34",incumbent:"Vicente Gonzalez (D)",cook:"Toss-up",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"South Texas majority-Latino district redrawn by R legislature. Trump won by 10 pts in 2024. Sabato moved from Toss-up to Lean D Sept. 10."},
   {district:"VA-02",incumbent:"Kiggans (R) vs. Luria (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 primary: Former Rep. Elaine Luria won the Dem nod, setting up a rematch — Kiggans unseated Luria in 2022. Reverted to Toss-up May 8 after VA Supreme Court struck down the Democratic gerrymander."},
   {district:"WA-03",incumbent:"Perez (D) vs. Braun (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 top-two primary set the matchup: state Senate Minority Leader John Braun advances as the Republican. Perez narrowly flipped this SW Washington seat in 2024; Trump won district."},
   {district:"WI-03",incumbent:"Derrick Van Orden (R)",cook:"Toss-up",sabato:"Tilt R",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Western WI district. Van Orden won by ~4 pts in 2024."},
