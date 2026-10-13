@@ -80,7 +80,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
       <span style="font-size:13px;font-weight:500;color:#991b1b">⚠ Election News Alert</span>
     </div>
     <ul style="margin:8px 0 0 16px;font-size:12px;color:#4b5563">
-      <li><span style="font-weight:500">Senate Majority Now "Squarely in Democrats' Sights" as Raters Keep Moving Left:</span> On Oct. 6 Cook moved Kansas from Lean R to Toss-up (Marshall vs. pastor Adam Hamilton), New Hampshire from Toss-up back to Lean D, and North Carolina from Lean D to Likely D, and raised its estimate of Democratic Senate pickups to two to six seats — four are needed. The same day Sabato moved Alaska from Toss-up to Lean D (Peltola over Sullivan) and flagged South Carolina (Darline Graham) as a Likely R "sleeper"; for the first time this cycle, Republicans need to win more of Sabato's Toss-ups to hold the Senate than Democrats need to flip it. Inside Elections' Oct. 1 update likewise moved Alaska to Toss-up, Georgia and North Carolina to Lean D, and added Minnesota (Lean D) and Nebraska (Lean R) to the competitive column. <a href="https://www.cookpolitical.com/analysis/senate/senate-overview/senate-majority-squarely-democrats-sights-kansas-moves-toss-two" target="_blank" rel="noopener noreferrer">Read Cook's analysis</a>.</li>
+      <li><span style="font-weight:500">Post Office Mail-Ballot Handling: Slower Mail, a Late-Postmark Risk, and USPS's "Extraordinary Measures" Come Late:</span> Votebeat (Oct. 12) and NPR (Oct. 9) report that USPS's Regional Transportation Optimization plan, rolled out since April 2025, cut daily pickups at post offices more than 50 miles from a processing center, so a ballot dropped in a rural mailbox may not be postmarked until the next day. USPS says it is confident it will deliver election mail and urges voters to mail ballots at least a week before their state's deadline. Its extra steps start later than in 2022 and 2024: some post offices extend hours and set up manual-postmark lines from Oct. 24, and RTO-affected offices separate ballots from other mail so they can be postmarked the day they are collected starting Oct. 26. Evidence from the 2026 primaries is worrying: Oregon rejected more than 7,300 ballots for improper postmarks in May (a 13% rate, up from 9.5% in 2024), late-postmark rejections rose more than 300% in some Washington counties, and Democracy Docket found roughly 130,000 of 205,000 rejected mail ballots across six states were late. A Brookings analysis estimates RTO could cause 43,000 to 55,000 additional ballots to be rejected as late this November. No nationwide on-time delivery data has been published. Election officials recommend drop boxes or in-person return. The Supreme Court's Sept. 14 order blocked the Trump effort to let USPS reject ballots. <a href="https://www.votebeat.org/national/2026/10/12/usps-mail-ballot-vote-absentee-2026-election-november/" target="_blank" rel="noopener noreferrer">Read the Votebeat report</a> &middot; <a href="https://www.npr.org/2026/10/09/nx-s1-5984981/mail-in-ballot-usps-postmark" target="_blank" rel="noopener noreferrer">NPR on postmarks</a></li>
     </ul>
   </div>
 
@@ -92,7 +92,7 @@ h1{font-size:26px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const LAST_UPDATED = "October 6, 2026";
+const LAST_UPDATED = "October 13, 2026";
 const SOURCES = ["Cook","Sabato","270toWin","Inside Elections","Ballotpedia"];
 const SOURCE_KEYS = {Cook:"cook",Sabato:"sabato","270toWin":"t270","Inside Elections":"ie",Ballotpedia:"bp"};
 const RATING_ORDER = ["Safe D","Likely D","Lean D","Tilt D","Toss-up","Tilt R","Lean R","Likely R","Safe R"];
@@ -100,28 +100,21 @@ const CONSENSUS_ORDER = ["Safe D","Likely D","Lean D","Toss-up","Lean R","Likely
 
 const CHANGES = {
   "Competitive House":[
-    "Refreshed: October 6, 2026",
-    "FL-14: Cook is at Toss-up (corrected — the tracker had it at Lean R); IE moved Tilt R to Toss-up Sept. 17.",
-    "CA-22: IE moved from Tilt R to Toss-up Oct. 1. IA-01 and IA-03: IE moved both from Toss-up to Tilt D Oct. 1.",
-    "IA-02 and NC-01: IE moved both from Lean R to Tilt R Sept. 17. MI-04: IE moved Lean R to Tilt R Oct. 1. FL-22: IE at Tilt R.",
-    "No new Cook or Sabato House moves since Sept. 29 (VA-01, PA-07, VA-02 — see prior refresh).",
+    "Refreshed: October 13, 2026",
+    "Cook (Oct. 9, 18 House moves): IA-01, IA-03, PA-07, PA-10 and WA-03 moved from Toss-up to Lean D. MI-04, NC-01 and VA-01 moved from Lean R to Toss-up (IA-02 was already at Toss-up).",
+    "NE-02: Cook moved from Lean D to Likely D Oct. 9 (IE and 270toWin keep it at Toss-up, so it stays on this tab).",
+    "No new Sabato or Inside Elections House moves found since Oct. 6 (Sabato's site blocks automated reads; checked via search only).",
   ],
   "Competitive Senate":[
-    "Refreshed: October 6, 2026",
-    "KS: Cook moved from Lean R to Toss-up Oct. 6 (Sabato at Lean R).",
-    "AK: Sabato moved from Toss-up to Lean D Oct. 6; Inside Elections moved to Toss-up Oct. 1; Cook holds Toss-up.",
-    "NC: Cook moved from Lean D to Likely D Oct. 6; IE moved to Lean D Oct. 1. NH: Cook moved from Toss-up to Lean D Oct. 6 (IE at Toss-up).",
-    "GA: Cook moved to Likely D Sept. 23 and Sabato is at Likely D (tracker previously showed Cook Toss-up — corrected); IE moved to Lean D Oct. 1.",
-    "TX: Sabato is at Toss-up (moved Aug. 26 — previously missed); IE moved from Lean R to Tilt R Oct. 1. MI: IE at Tilt D. ME: IE moved Tilt R to Toss-up Sept. 17. OH (special): IE at Toss-up.",
-    "MN ADDED: Inside Elections moved from Likely D to Lean D Oct. 1 (Cook and Sabato Likely D). Flanagan (D) vs. Tafoya (R). NE ADDED: Inside Elections moved from Likely R to Lean R Oct. 1 (Cook and Sabato Likely R). Ricketts (R) vs. Osborn (I).",
-    "SC NOT ADDED: Cook (Sept. 23) and Sabato (Oct. 6) both now Likely R — below the Lean threshold.",
+    "Refreshed: October 13, 2026",
+    "No new Cook, Sabato or Inside Elections Senate moves found since Oct. 6. Cook's Oct. 9 update covered House races only.",
+    "KS: Cook Toss-up, Sabato Lean R. NH: Cook Lean D. NC: Cook Likely D. AK: Sabato Lean D, Cook and IE Toss-up (all unchanged).",
   ],
   "Leaning House":[
-    "Refreshed: October 6, 2026",
-    "ADDED (Lean R by at least one rater): FL-13 (Luna), FL-27 (Salazar), MT-01 (open), TX-35 and WI-01 (Steil) — Cook moved all five Likely R to Lean R Sept. 25; KY-06 (open), MO-02 (Wagner), and VA-05 (McGuire) — Sabato moved all three Likely R to Lean R Sept. 29. Several were missed in earlier refreshes.",
-    "CO-05: Sabato at Lean R and IE moved to Tilt R (Sept. 17), joining Cook's Sept. 25 move.",
-    "CA-45 and NY-19: Inside Elections moved to Likely D (Oct. 1 and Sept. 17).",
-    "No other Leaning House rating changes since Sept. 29.",
+    "Refreshed: October 13, 2026",
+    "Cook (Oct. 9): NV-03, NY-03 and NY-04 moved from Lean D to Likely D. KY-06, ME-02 and PA-01 moved from Likely R to Lean R.",
+    "MOVED to Competitive House: none this week. MI-04, NC-01 and VA-01 were already on the Competitive tab via Sabato.",
+    "MI-10: Cook's ratings page lists it as Toss-up, but no news report confirms a move, so the tracker still shows Lean R. Please verify.",
   ],
 };
 
@@ -170,26 +163,23 @@ function clearPrimary(){
 // ---- Primary results panel data ----
 // To refresh: edit this array only. tag: "rating" = Rating change, "primary" = Primary set, "note" = Not tracked.
 const PRIMARY_RESULTS = {
-  date: "Week of Oct. 3-6, 2026",
+  date: "Week of Oct. 7-13, 2026",
   items: [
-    {id:"cooksenate1006", tag:"rating", dist:"KS / NH / NC Senate",
-     sum:'Cook: Kansas &rarr; <span style="background:#fef9c3;color:#854d0e;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Toss-up</span>',
-     detail:"Cook moved Kansas (Marshall vs. Hamilton) from Lean R to Toss-up, New Hampshire (Sununu vs. Pappas) from Toss-up to Lean D, and North Carolina (open) from Lean D to Likely D on Oct. 6, and now sees two to six Democratic Senate pickups. Cook cited Trump as a drag even in deep-red states; Republicans' super PAC recently paused a $30 million North Carolina ad campaign and made a seven-figure Kansas buy. All three stay on the Competitive Senate tab."},
-    {id:"sabatoak1006", tag:"rating", dist:"AK Senate",
-     sum:'Sabato: Toss-up &rarr; <span style="background:#bfdbfe;color:#1e40af;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean D</span>',
-     detail:"Sabato moved Alaska (Peltola vs. Sullivan) from Toss-up to Lean D on Oct. 6 — leaving Sabato with four Toss-ups (IA, ME, OH, TX). Cook still has Alaska at Toss-up; Inside Elections moved it to Toss-up Oct. 1. Sabato also moved South Carolina from Safe R to Likely R (not tracked)."},
-    {id:"iesenate1001", tag:"rating", dist:"MN / NE / GA / NC / TX Senate",
-     sum:"Inside Elections: Minnesota and Nebraska join the competitive column",
-     detail:"Inside Elections' Oct. 1 Senate update moved Minnesota (Flanagan vs. Tafoya) from Likely D to Lean D and Nebraska (Ricketts vs. independent Dan Osborn) from Likely R to Lean R, moved Georgia and North Carolina to Lean D, Alaska to Toss-up, and Texas from Lean R to Tilt R. Because each is now rated Lean by at least one tracked source, MN and NE are ADDED to Competitive Senate; Cook and Sabato still have both at Likely."},
-    {id:"leanhouseadds", tag:"rating", dist:"FL-13 / FL-27 / MT-01 / TX-35 / WI-01 / KY-06 / MO-02 / VA-05",
-     sum:"Eight GOP-held seats added to Leaning House",
-     detail:"Reconciling against recent rater changes surfaced eight seats now rated Lean R by at least one tracked source that earlier refreshes missed: Cook moved FL-13 (Luna), FL-27 (Salazar), MT-01 (open), TX-35, and WI-01 (Steil) from Likely R to Lean R on Sept. 25; Sabato moved KY-06 (open), MO-02 (Wagner), and VA-05 (McGuire) from Likely R to Lean R on Sept. 29; Inside Elections also has FL-13, FL-27, KY-06, and MT-01 at Lean R."},
-    {id:"ieHouse1001", tag:"rating", dist:"IA-01 / IA-03 / CA-22 / MI-04 / NC-01 / FL-14",
-     sum:"Inside Elections shifts six competitive House seats toward Democrats",
-     detail:"Inside Elections moved IA-01 and IA-03 from Toss-up to Tilt D and CA-22 (Valadao) from Tilt R to Toss-up on Oct. 1, and earlier moved FL-14 (Castor) from Tilt R to Toss-up (Sept. 17), IA-02 and NC-01 from Lean R to Tilt R (Sept. 17), and MI-04 from Lean R to Tilt R (Oct. 1). No tab changes."},
-    {id:"txsenvoterreg", tag:"note", dist:"TX Senate",
-     sum:"Context: Sabato and IE both moved Texas toward Democrats",
-     detail:"Texas's Senate race (Paxton vs. Talarico) is now Toss-up at Cook and Sabato — Sabato moved it Lean R to Toss-up on Aug. 26, which this tracker had missed — and Tilt R at Inside Elections after its Oct. 1 move from Lean R. See last week's Election News Alert coverage of the Texas voter-registration failure."},
+    {id:"cooktoD1009", tag:"rating", dist:"IA-01 / IA-03 / PA-07 / PA-10 / WA-03",
+     sum:'Cook: five Toss-ups &rarr; <span style="background:#bfdbfe;color:#1e40af;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean D</span>',
+     detail:"In a batch of 18 House rating changes on Oct. 9, Cook moved Miller-Meeks (IA-01, vs. Bohannan), Nunn (IA-03), Mackenzie (PA-07), Perry (PA-10) and Gluesenkamp Perez (WA-03) from Toss-up to Lean D. Cook's Erin Covey wrote that Republicans would need to win roughly three-quarters of the Toss-ups to keep the House. All five stay on the Competitive House tab because Sabato, 270toWin or IE still show Toss-up for some of them."},
+    {id:"cooktossup1009", tag:"rating", dist:"MI-04 / NC-01 / VA-01 (and IA-02)",
+     sum:'Cook: Lean R &rarr; <span style="background:#fef9c3;color:#854d0e;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Toss-up</span>',
+     detail:"Cook moved Huizenga (MI-04), Davis (NC-01, a Democrat in a GOP-redrawn seat) and Wittman (VA-01) from Lean R to Toss-up on Oct. 9, as it did for the open IA-02, which this tracker already had at Toss-up. All four were already on the Competitive House tab via Sabato."},
+    {id:"cooklikelyD1009", tag:"rating", dist:"NE-02 / NV-03 / NY-03 / NY-04",
+     sum:'Cook: Democratic-leaning seats &rarr; <span style="background:#dbeafe;color:#1e3a8a;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Likely D</span>',
+     detail:"Cook moved the open NE-02 (Bacon retiring), Susie Lee (NV-03), Suozzi (NY-03) and Gillen (NY-04) from Lean D to Likely D on Oct. 9. NE-02 stays on Competitive House because IE and 270toWin still have Toss-up; NV-03, NY-03 and NY-04 stay on Leaning House because Sabato, IE and 270toWin have Lean D."},
+    {id:"cooklean1009", tag:"rating", dist:"KY-06 / ME-02 / PA-01",
+     sum:'Cook: GOP-held seats &rarr; <span style="background:#fecaca;color:#991b1b;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:500">Lean R</span>',
+     detail:"Cook moved the open KY-06 (Barr), the open ME-02 (Golden) and Fitzpatrick's PA-01 from Likely R to Lean R on Oct. 9. All three remain on the Leaning House tab."},
+    {id:"cooknottracked1009", tag:"note", dist:"AR-02 / IN-05 and others",
+     sum:"Cook also moved Hill (AR-02) and Spartz (IN-05) from Solid R to Likely R",
+     detail:"Part of the same Oct. 9 batch of 18. Neither race is tracked here, since both are Likely R or safer at Cook. Reports of the full list differ slightly between outlets; the changes above are taken from Cook's own ratings page where possible."},
   ],
 };
 
@@ -216,27 +206,27 @@ const HOUSE_COMPETITIVE=[
   {district:"FL-14",incumbent:"Castor (D) vs. Beltran (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Lean R",ie:"Toss-up",bp:"N/A",note:"Aug. 18 primary: Former state Rep. Mike Beltran won the 8-way GOP primary. Sabato upgraded from Lean R to Toss-up July 30 as part of a 13-race batch shift toward Democrats, citing Castor's long Tampa name ID even after redistricting pushed the seat to ~55% Trump."},
   {district:"FL-22",incumbent:"Open (Frankel, D, running in FL-23)",cook:"Toss-up",sabato:"Lean R",t270:"Lean R",ie:"Tilt R",bp:"N/A",note:"MOVED from Leaning House: Cook moved from Lean R to Toss-up Sept. 25."},
   {district:"FL-25",incumbent:"Moskowitz (D) vs. Singer (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"N/A",note:"Aug. 18 primary: Moskowitz beat DSA-backed Oliver Larkin 63%-37% in the Dem primary; former Boca Raton Mayor Scott Singer won a 5-way GOP field with 31%. Completely redrawn coastal seat (Miami Beach to Boca Raton); Trump won new lines 54-45 in 2024. Moskowitz moved over from his old FL-23. Wasserman Schultz's old FL-25 was dismantled; she is running in Solid-D FL-20. FL Supreme Court declined to block the new map June 9. (5)"},
-  {district:"IA-01",incumbent:"Mariannette Miller-Meeks (R)",cook:"Toss-up",sabato:"Lean D",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Narrowest R House win in 2024 -- won by 799 votes (0.2%). Dem Bohannan running again. Sabato moved from Toss-up to Lean D Sept. 22."},
+  {district:"IA-01",incumbent:"Mariannette Miller-Meeks (R)",cook:"Lean D",sabato:"Lean D",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Narrowest R House win in 2024 -- won by 799 votes (0.2%). Dem Bohannan running again. Sabato moved from Toss-up to Lean D Sept. 22. Cook moved from Toss-up to Lean D Oct. 9."},
   {district:"IA-02",incumbent:"Open (Hinson, R running for Senate)",cook:"Toss-up",sabato:"Lean R",t270:"N/A",ie:"Tilt R",bp:"Likely R",note:"MOVED from Leaning House: Cook moved from Lean R to Toss-up Sept. 17. Open seat; Dem gubernatorial nominee Rob Sand expected to carry the district even if he loses statewide."},
-  {district:"IA-03",incumbent:"Zach Nunn (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Suburban Des Moines district won by Nunn 51.8% in 2024. IE moved from Toss-up to Tilt R on June 11."},
-  {district:"MI-04",incumbent:"Bill Huizenga (R)",cook:"Lean R",sabato:"Toss-up",t270:"N/A",ie:"Tilt R",bp:"N/A",note:"MOVED from Leaning House: Sabato moved from Lean R to Toss-up Sept. 17, citing a highly competitive contest against state Sen. Sean McCann (D) in this Trump+5.5 southwest Michigan district."},
+  {district:"IA-03",incumbent:"Zach Nunn (R)",cook:"Lean D",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Suburban Des Moines district won by Nunn 51.8% in 2024. IE moved Toss-up to Tilt D Oct. 1. Cook moved from Toss-up to Lean D Oct. 9."},
+  {district:"MI-04",incumbent:"Bill Huizenga (R)",cook:"Toss-up",sabato:"Toss-up",t270:"N/A",ie:"Tilt R",bp:"N/A",note:"MOVED from Leaning House: Sabato moved from Lean R to Toss-up Sept. 17, citing a highly competitive contest against state Sen. Sean McCann (D) in this Trump+5.5 southwest Michigan district. Cook moved from Lean R to Toss-up Oct. 9."},
   {district:"MI-07",incumbent:"Barrett (R) vs. Lawrence (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 primary: Progressive organizer William Lawrence won the Dem nomination. Freshman R Barrett won this open Lansing-area seat in 2024; Trump won narrowly."},
-  {district:"NC-01",incumbent:"Davis (D) vs. Buckhout (R)",cook:"Lean R",sabato:"Toss-up",t270:"Lean R",ie:"Tilt R",bp:"Lean R",note:"MOVED from Leaning House: Sabato upgraded from Lean R to Toss-up July 30, one of 13 races shifted toward Democrats. Davis faces a rematch with 2024 opponent Laurie Buckhout in a district redrawn to ~55% Trump; a Libertarian is also on the ballot."},
+  {district:"NC-01",incumbent:"Davis (D) vs. Buckhout (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Lean R",ie:"Tilt R",bp:"Lean R",note:"MOVED from Leaning House: Sabato upgraded from Lean R to Toss-up July 30, one of 13 races shifted toward Democrats. Davis faces a rematch with 2024 opponent Laurie Buckhout in a district redrawn to ~55% Trump; a Libertarian is also on the ballot. Cook moved from Lean R to Toss-up Oct. 9."},
   {district:"NC-11",incumbent:"Balkcom (R) vs. Ager (D)",cook:"Toss-up",sabato:"Toss-up",t270:"N/A",ie:"Lean R",bp:"N/A",note:"Rep. Chuck Edwards (R) withdrew from re-election Aug. 5 after the House Ethics Committee found 'substantial evidence' of persistent inappropriate conduct toward two young female staffers and recommended censure; he'll finish his term. The NC-11 GOP executive committee unanimously chose state Rep. Jennifer Balkcom as his replacement on Aug. 10, over five other contenders. Sabato moved to Toss-up July 30; Cook followed Sept. 25. Dem Jamie Ager (the March primary winner) has out-raised Balkcom substantially."},
-  {district:"NE-02",incumbent:"Open (Bacon, R retiring)",cook:"Lean D",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Open seat; Harris won by ~4.6 pts in 2024. Cook joined Sabato at Lean D in June; IE and 270toWin still Toss-up. Only NE district allocating its Electoral Vote independently. (4)"},
+  {district:"NE-02",incumbent:"Open (Bacon, R retiring)",cook:"Likely D",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Open seat; Harris won by ~4.6 pts in 2024. Cook joined Sabato at Lean D in June; IE and 270toWin still Toss-up. Only NE district allocating its Electoral Vote independently. (4) Cook moved from Lean D to Likely D Oct. 9."},
   {district:"NJ-07",incumbent:"Bennett (D) vs. Kean (R)",cook:"Lean D",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Kean returned to Congress June 30, disclosing he had been hospitalized for depression — missed 140+ votes since March 5. 'Asking for help is not a weakness. It is a strength.' Bennett (D, Navy veteran) defeated 3 rivals June 2; IE moved to Tilt D June 11; Cook moved to Lean D Sept. 25; Kalshi markets ~75-78% Dem."},
   {district:"NY-17",incumbent:"Conley (D) vs. Lawler (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt R",bp:"Toss-up",note:"Army veteran/NSC alum Cait Conley won the June 23 Dem primary outright (~49% in a 5-way field) and faces Lawler in November. One of only 3 R incumbents in Harris-won districts. Lawler mulling governor run. (2)"},
   {district:"OH-01",incumbent:"Greg Landsman (D)",cook:"Lean D",sabato:"Toss-up",t270:"Toss-up",ie:"Tilt D",bp:"Toss-up",note:"Cook and IE both now rate Lean D/Tilt D; Sabato and 270toWin hold at Toss-up. Cincinnati-area district Trump carried by ~3 pts in 2024."},
   {district:"OH-07",incumbent:"Miller (R) vs. Poindexter (D)",cook:"Toss-up",sabato:"Lean R",t270:"N/A",ie:"N/A",bp:"N/A",note:"MOVED from Leaning House: Cook joined Sabato at Toss-up Aug. 10 (from Likely R) after Miller vowed to stay in the race despite House Ethics Committee scrutiny and domestic-abuse allegations from his ex-wife. A co/efficient poll had Poindexter (D) leading by 14 points. Both Ohio GOP senators, including Miller's ex-father-in-law Bernie Moreno, have called for him to drop out; he has refused, and the deadline for county chairs to replace him on the ballot passed Aug. 10."},
   {district:"OH-09",incumbent:"Marcy Kaptur (D)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Longest-serving woman in Congress. Trump won district by 11 pts. Top GOP pickup opportunity."},
-  {district:"PA-07",incumbent:"Ryan Mackenzie (R)",cook:"Toss-up",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Lehigh Valley true swing seat. Mackenzie flipped from Dem Wild by ~4,000 votes in 2024. Sabato moved from Toss-up to Lean D Sept. 29, citing a Franklin & Marshall poll showing Democrat Bob Brooks leading 45%-40%."},
+  {district:"PA-07",incumbent:"Ryan Mackenzie (R)",cook:"Lean D",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Lehigh Valley true swing seat. Mackenzie flipped from Dem Wild by ~4,000 votes in 2024. Sabato moved from Toss-up to Lean D Sept. 29, citing a Franklin & Marshall poll showing Democrat Bob Brooks leading 45%-40%. Cook followed Sabato to Lean D Oct. 9."},
   {district:"PA-08",incumbent:"Rob Bresnahan (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Moved Lean R to Toss-up Apr. 7. Bresnahan faces scrutiny over 600+ stock trades. (3)"},
-  {district:"PA-10",incumbent:"Scott Perry (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Former Freedom Caucus chair won by just 1 pt in 2024. IE moved from Tilt R to Toss-up May 21. Dem Stelson running again."},
+  {district:"PA-10",incumbent:"Scott Perry (R)",cook:"Lean D",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Former Freedom Caucus chair won by just 1 pt in 2024. IE moved from Tilt R to Toss-up May 21. Dem Stelson running again. Cook moved from Toss-up to Lean D Oct. 9."},
   {district:"TX-15",incumbent:"Monica De La Cruz (R)",cook:"Toss-up",sabato:"Toss-up",t270:"N/A",ie:"N/A",bp:"N/A",note:"MOVED from Leaning House: Sabato moved to Toss-up Aug. 26; Cook followed Sept. 25. South Texas border district (Cook PVI R+7); De La Cruz faces Bobby Pulido (D)."},
   {district:"TX-34",incumbent:"Vicente Gonzalez (D)",cook:"Toss-up",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"South Texas majority-Latino district redrawn by R legislature. Trump won by 10 pts in 2024. Sabato moved from Toss-up to Lean D Sept. 10."},
-  {district:"VA-01",incumbent:"Rob Wittman (R)",cook:"Lean R",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R",note:"MOVED from Leaning House: Sabato moved from Lean R to Toss-up Sept. 29."},
+  {district:"VA-01",incumbent:"Rob Wittman (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Lean R",ie:"Lean R",bp:"Lean R",note:"MOVED from Leaning House: Sabato moved from Lean R to Toss-up Sept. 29. Cook moved from Lean R to Toss-up Oct. 9."},
   {district:"VA-02",incumbent:"Kiggans (R) vs. Luria (D)",cook:"Toss-up",sabato:"Lean D",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 primary: Former Rep. Elaine Luria won the Dem nod, setting up a rematch — Kiggans unseated Luria in 2022. Reverted to Toss-up May 8 after VA Supreme Court struck down the Democratic gerrymander. Sabato moved from Toss-up to Lean D Sept. 29."},
-  {district:"WA-03",incumbent:"Perez (D) vs. Braun (R)",cook:"Toss-up",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 top-two primary set the matchup: state Senate Minority Leader John Braun advances as the Republican. Perez narrowly flipped this SW Washington seat in 2024; Trump won district."},
+  {district:"WA-03",incumbent:"Perez (D) vs. Braun (R)",cook:"Lean D",sabato:"Toss-up",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Aug. 4 top-two primary set the matchup: state Senate Minority Leader John Braun advances as the Republican. Perez narrowly flipped this SW Washington seat in 2024; Trump won district. Cook moved from Toss-up to Lean D Oct. 9."},
   {district:"WI-03",incumbent:"Derrick Van Orden (R)",cook:"Toss-up",sabato:"Tilt R",t270:"Toss-up",ie:"Toss-up",bp:"Toss-up",note:"Western WI district. Van Orden won by ~4 pts in 2024."},
 ];
 
@@ -265,19 +255,19 @@ const HOUSE_LEANING=[
   {district:"FL-27",incumbent:"Maria Elvira Salazar (R)",cook:"Lean R",sabato:"Lean R",t270:"N/A",ie:"Lean R",bp:"N/A"},
   {district:"FL-09",incumbent:"Darren Soto (D)",cook:"Likely R",sabato:"N/A",t270:"N/A",ie:"Likely R",bp:"N/A"},
   {district:"FL-07",incumbent:"Elijah (R) vs. Dalton (D)",cook:"Lean R",sabato:"N/A",t270:"N/A",ie:"N/A",bp:"N/A"},
-  {district:"KY-06",incumbent:"Open (Barr, R retiring)",cook:"Likely R",sabato:"Lean R",t270:"N/A",ie:"Lean R",bp:"N/A"},
-  {district:"ME-02",incumbent:"Dunlap (D) vs. LePage (R)",cook:"Likely R",sabato:"Lean R",t270:"Likely R",ie:"Lean R",bp:"Likely R"},
+  {district:"KY-06",incumbent:"Open (Barr, R retiring)",cook:"Lean R",sabato:"Lean R",t270:"N/A",ie:"Lean R",bp:"N/A",note:"Cook moved from Likely R to Lean R Oct. 9."},
+  {district:"ME-02",incumbent:"Dunlap (D) vs. LePage (R)",cook:"Lean R",sabato:"Lean R",t270:"Likely R",ie:"Lean R",bp:"Likely R",note:"Cook moved from Likely R to Lean R Oct. 9."},
   {district:"MI-08",incumbent:"Kristen McDonald Rivet (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Likely D",bp:"Lean D"},
   {district:"MI-10",incumbent:"Open (James, R running for gov)",cook:"Lean R",sabato:"Lean R",t270:"Lean R",ie:"Lean R",bp:"Lean R"},
   {district:"MO-02",incumbent:"Ann Wagner (R)",cook:"Safe R",sabato:"Lean R",t270:"N/A",ie:"N/A",bp:"N/A"},
   {district:"MT-01",incumbent:"Open (Zinke, R retiring)",cook:"Lean R",sabato:"Lean R",t270:"N/A",ie:"Lean R",bp:"N/A"},
   {district:"NM-02",incumbent:"Gabe Vasquez (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
-  {district:"NV-03",incumbent:"Susie Lee (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
-  {district:"NY-03",incumbent:"Suozzi (D) vs. LiPetri (R)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
-  {district:"NY-04",incumbent:"Laura Gillen (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
+  {district:"NV-03",incumbent:"Susie Lee (D)",cook:"Likely D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D",note:"Cook moved from Lean D to Likely D Oct. 9."},
+  {district:"NY-03",incumbent:"Suozzi (D) vs. LiPetri (R)",cook:"Likely D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D",note:"Cook moved from Lean D to Likely D Oct. 9."},
+  {district:"NY-04",incumbent:"Laura Gillen (D)",cook:"Likely D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D",note:"Cook moved from Lean D to Likely D Oct. 9."},
   {district:"NY-19",incumbent:"Riley (D) vs. Oberacker (R)",cook:"Likely D",sabato:"Likely D",t270:"Lean D",ie:"Likely D",bp:"Lean D"},
   {district:"OH-13",incumbent:"Emilia Sykes (D)",cook:"Likely D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
-  {district:"PA-01",incumbent:"Brian Fitzpatrick (R)",cook:"Likely R",sabato:"Likely R",t270:"Likely R",ie:"Lean R",bp:"Likely R"},
+  {district:"PA-01",incumbent:"Brian Fitzpatrick (R)",cook:"Lean R",sabato:"Likely R",t270:"Likely R",ie:"Lean R",bp:"Likely R",note:"Cook moved from Likely R to Lean R Oct. 9."},
   {district:"TX-28",incumbent:"Henry Cuellar (D)",cook:"Lean D",sabato:"Lean D",t270:"Lean D",ie:"Lean D",bp:"Lean D"},
   {district:"TX-35",incumbent:"New seat (redrawn TX-35)",cook:"Lean R",sabato:"Lean R",t270:"N/A",ie:"N/A",bp:"N/A"},
   {district:"VA-05",incumbent:"John McGuire (R)",cook:"Likely R",sabato:"Lean R",t270:"N/A",ie:"N/A",bp:"N/A"},
